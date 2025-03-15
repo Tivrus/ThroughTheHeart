@@ -1,0 +1,239 @@
+/* Общие стили */
+* {
+    margin: 0; /* Убираем внешние отступы для всех элементов */
+    padding: 0; /* Убираем внутренние отступы для всех элементов */
+    box-sizing: border-box; /* Границы и отступы включаются в общую ширину элемента */
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Основной шрифт для всего сайта */
+    line-height: 1.6; /* Высота строки для лучшей читаемости */
+    background-color: #f4f4f4; /* Цвет фона страницы (легкий серый) */
+    color: #333; /* Основной цвет текста (темно-серый) */
+}
+
+
+.form-section{
+    z-index: 2;
+    visibility: hidden;
+}
+
+.container {
+    width: 90%; /* Ширина контейнера занимает 90% родительского элемента */
+    max-width: 1200px; /* Максимальная ширина контейнера (для адаптивности) */
+    margin: 0 auto; /* Центрируем контейнер по горизонтали */
+}
+
+.header {
+    background: #ffffff; /* Фон заголовка — белый */
+    color: #9e5cb0; /* Цвет текста в заголовке (фиолетовый оттенок) */
+    padding: 1rem 0; /* Внутренний отступ сверху и снизу */
+    position: relative; /* Относительное позиционирование для дочерних элементов */
+}
+
+.top-bar {
+    display: flex; /* Используем Flexbox для выравнивания элементов */
+    justify-content: space-between; /* Распределяем элементы между левым и правым краями */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+.left-section {
+    display: flex; /* Левая часть верхней панели (логотип и навигация) */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+.logo {
+    display: flex; /* Логотип и текст "Through the heart" */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    color: #9e5cb0; /* Цвет текста логотипа (фиолетовый оттенок) */
+}
+
+.logo img {
+    height: 60px; /* Высота изображения логотипа */
+    margin-right: 10px; /* Отступ между логотипом и текстом */
+}
+
+.logo span {
+    font-size: 1.5rem; /* Размер шрифта для текста "Through the heart" */
+}
+
+.main-nav {
+    margin-left: 20px; /* Отступ между логотипом и навигацией */
+}
+
+.nav-links {
+    list-style: none; /* Убираем маркеры списка */
+    display: flex; /* Располагаем пункты меню горизонтально */
+}
+
+.nav-links li {
+    margin-left: 1rem; /* Отступ между пунктами меню */
+}
+
+.nav-links a {
+    color: #9e5cb0; /* Цвет ссылок в меню (фиолетовый оттенок) */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    font-size: 1rem; /* Размер шрифта для ссылок */
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+}
+
+.right-section {
+    display: flex; /* Правая часть верхней панели (иконки и телефон) */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+}
+
+.icon {
+    display: inline-flex; /* Иконки соцсетей */
+    justify-content: center; /* Выравниваем содержимое по центру по горизонтали */
+    align-items: center; /* Выравниваем содержимое по центру по вертикали */
+    width: 40px; /* Ширина иконки */
+    height: 40px; /* Высота иконки */
+    border-radius: 50%; /* Делаем иконки круглыми */
+    margin-right: 10px; /* Отступ между иконками */
+    overflow: hidden; /* Обрезаем изображение, если оно выходит за границы */
+    background-color: transparent; /* Убираем фон у иконок */
+}
+
+.icon img {
+    width: 100%; /* Изображение заполняет всю ширину иконки */
+    height: 100%; /* Изображение заполняет всю высоту иконки */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+    filter: none; /* Убираем фильтры (например, цветовые эффекты) */
+}
+
+.phone {
+    display: flex; /* Блок с номером телефона */
+    align-items: center; /* Выравниваем элементы по центру по вертикали */
+    margin-left: 10px; /* Отступ слева от блока телефона */
+}
+
+.phone img {
+    margin-right: 5px; /* Отступ между иконкой телефона и текстом номера */
+}
+
+.hero {
+    background: #f4f4f4; /* Фон секции "Hero" (светло-серый) */
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 5rem 0; /* Внутренний отступ сверху и снизу */
+}
+
+.hero h2 {
+    font-size: 2.5rem; /* Размер шрифта для заголовка */
+    margin-bottom: 1rem; /* Отступ снизу от заголовка */
+}
+
+.hero p {
+    font-size: 1.2rem; /* Размер шрифта для текста */
+    margin-bottom: 2rem; /* Отступ снизу от текста */
+}
+
+.btn {
+    background: #9e5cb0; /* Фон кнопки (фиолетовый оттенок) */
+    color: #fff; /* Цвет текста на кнопке (белый) */
+    padding: 0.8rem 1.5rem; /* Внутренние отступы кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 20px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Добавляем указатель мыши в виде руки */
+    font-size: 1rem; /* Размер шрифта текста на кнопке */
+    transition: background 0.3s ease, transform 0.3s ease; /* Анимация фона и масштабирования */
+}
+
+.btn:hover {
+    background: #8a4da7; /* Темный фиолетовый фон при наведении */
+    transform: scale(1.05); /* Небольшое увеличение кнопки при наведении */
+}
+
+.services {
+    padding: 3rem 0; /* Внутренние отступы для секции услуг */
+}
+
+.service-list {
+    display: flex; /* Располагаем услуги горизонтально */
+    gap: 1.5rem; /* Расстояние между услугами */
+    justify-content: space-between; /* Равномерно распределяем услуги */
+}
+
+/* Стили для карточек услуг */
+.service-item {
+    background: #9e5cb0; /* Фон карточки услуги (фиолетовый оттенок) */
+    color: #fff; /* Цвет текста в карточке (белый) */
+    border-radius: 8px; /* Закругляем углы карточки */
+    overflow: hidden; /* Обрезаем содержимое, если оно выходит за границы */
+    transition: transform 0.3s ease; /* Анимация увеличения карточки */
+    cursor: pointer; /* Добавляем указатель мыши в виде руки */
+    width: calc(33% - 2rem); /* Ширина карточки (33% минус отступы) */
+    position: relative; /* Для позиционирования элементов внутри карточки */
+}
+
+.service-item:hover {
+    transform: scale(1.05); /* Небольшое увеличение карточки при наведении */
+}
+
+.service-item img {
+    width: 100%; /* Изображение заполняет всю ширину карточки */
+    height: 200px; /* Высота изображения */
+    object-fit: cover; /* Сохраняем пропорции изображения */
+}
+
+.service-item h2 {
+    margin: 1rem 0; /* Отступы вокруг заголовка услуги */
+    font-size: 1.2rem; /* Размер шрифта заголовка */
+    text-align: center; /* Выравниваем текст по центру */
+}
+
+.service-item p {
+    margin-bottom: 1rem; /* Отступ снизу от текста цены */
+    text-align: center; /* Выравниваем текст по центру */
+}
+
+/* Кнопка "Подробнее" */
+.service-item .btn-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-item:hover .btn-more {
+    opacity: 1;
+}
+
+.service-item .btn-more a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Footer(низ 2025) */
+.footer {
+    background: #9e5cb0; /* Фон футера (фиолетовый оттенок) */
+    color: #ffffff; /* Цвет текста в футере (белый) */
+    text-align: center; /* Выравниваем текст по центру */
+    padding: 1rem 0; /* Внутренние отступы футера */
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пирсинг Салон | Through the heart</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!-- Header -->
+  <header class="header">
+    <div class="container">
+        <div class="top-bar">
+          <div class="left-section">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="Through the heart">
+                <span>Through the heart</span>
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#">Подарочные сертификаты</a></li>
+                    <li><a href="services.html">Услуги</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                    <li><a href="zapis.html">Записаться</a></li>
+                </ul>
+            </nav>
+          </div>
+          <div class="right-section">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/79786680612" class="icon whatsapp" target="_blank">
+                <img src="images/whatsapp-icon.png" alt="WhatsApp">
+            </a>
+            <!-- VK -->
+            <a href="https://vk.com/pirsing_sevastopol" class="icon vk" target="_blank">
+                <img src="images/vk-icon.png" alt="VK">
+            </a>
+            <!-- TELEGRAM -->
+            <a href="https://t.me/PIERCINGSevastopoll" class="icon telegram" target="_blank">
+                <img src="images/telegram-icon.png" alt="Telegram">
+            </a>
+            <a href="tel:+79165020033" class="phone"><img src="images/call.png" alt="Phone"> 8 (916) 502-00-33</a>
+          </div>
+        </div>
+    </div>
+  </header>
+
+  <!-- Запись на консультацию -->
+  <section class="form-section">
+    <div class="form-container">
+        <h2>Записаться на консультацию</h2>
+        <form id="consultationForm" class="form">
+            <div class="input-group">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required placeholder="Введите имя">
+            </div>
+            <div class="input-group">
+                <label for="surname">Фамилия:</label>
+                <input type="text" id="surname" name="surname" required placeholder="Введите фамилию">
+            </div>
+            <div class="input-group">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="Введите телефон">
+            </div>
+            <div class="input-group">
+                <label for="comment">Комментарий:</label>
+                <textarea id="comment" name="comment" placeholder="Оставьте комментарий"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Отправить заявку</button>
+        </form>
+        <p class="success-message hidden">Заявка успешно отправлена!</p>
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+      <div class="container">
+        <h2>Профессиональный пирсинг в вашем городе</h2>
+        <p>Запишитесь на прием прямо сейчас!</p>
+        <button class="btn_form" onclick="">Записаться</button>
+      </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Наши услуги</h2>
+      <div class="service-list">
+        <!-- Пирсинг ушей -->
+        <div class="service-item" data-service="ear-piercing">
+          <img src="images/ear-piercing.jpg" alt="Пирсинг ушей">
+          <h2>Пирсинг ушей</h2>
+          <p>От 1000 ₽</p>
+          <div class="btn-more"><a href="#">Подробнее</a></div>
+        </div>
+
+        <!-- Пирсинг носа -->
+        <div class="service-item" data-service="nose-piercing">
+          <img src="images/nose-piercing.jpg" alt="Пирсинг носа">
+          <h2>Пирсинг носа</h2>
+          <p>От 1500 ₽</p>
+          <div class="btn-more"><a href="#">Подробнее</a></div>
+        </div>
+
+        <!-- Пирсинг губ -->
+        <div class="service-item" data-service="lip-piercing">
+          <img src="images/lip-piercing.jpg" alt="Пирсинг губ">
+          <h2>Пирсинг губ</h2>
+          <p>От 2000 ₽</p>
+          <div class="btn-more"><a href="#">Подробнее</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Все права защищены. Салон пирсинг в Санкт-Петербурге «Through the heart».</p>
+      </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/servises.js"></script>
+</body>
+</html>
