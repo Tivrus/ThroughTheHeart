@@ -24,9 +24,9 @@
                 <ul class="nav-links">
                     <li><a href="index.html">Главная</a></li>
                     <li><a href="#">Подарочные сертификаты</a></li>
-                    <li><a href="../templates/services.html">Услуги</a></li>
+                    <li><a href="services.html">Услуги</a></li>
                     <li><a href="contacts.html">Контакты</a></li>
-                    <li><a href="zapis.html">Записаться</a></li>
+                    <li><button class="sing_on_btn">Записаться</button></li>
                 </ul>
             </nav>
           </div>
@@ -51,28 +51,30 @@
 
   <!-- Запись на консультацию -->
   <section class="form-section">
-    <div class="form-container">
+    <div class="alpha-background">
+      <div class="form-container">
         <h2>Записаться на консультацию</h2>
         <form id="consultationForm" class="form">
-            <div class="input-group">
-                <label for="name">Имя:</label>
-                <input type="text" id="name" name="name" required placeholder="Введите имя">
-            </div>
-            <div class="input-group">
-                <label for="surname">Фамилия:</label>
-                <input type="text" id="surname" name="surname" required placeholder="Введите фамилию">
-            </div>
-            <div class="input-group">
-                <label for="phone">Телефон:</label>
-                <input type="tel" id="phone" name="phone" required placeholder="Введите телефон">
-            </div>
-            <div class="input-group">
-                <label for="comment">Комментарий:</label>
-                <textarea id="comment" name="comment" placeholder="Оставьте комментарий"></textarea>
-            </div>
-            <button type="submit" class="submit-btn">Отправить заявку</button>
+          <div class="input-group">
+            <label for="name">Имя:</label>
+            <input type="text" id="name" name="name" required placeholder="Введите имя">
+          </div>
+          <div class="input-group">
+            <label for="surname">Фамилия:</label>
+            <input type="text" id="surname" name="surname" required placeholder="Введите фамилию">
+          </div>
+          <div class="input-group">
+            <label for="phone">Телефон:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Введите телефон">
+          </div>
+          <div class="input-group">
+            <label for="comment">Комментарий:</label>
+            <textarea id="comment" name="comment" placeholder="Оставьте комментарий"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Отправить заявку</button>
         </form>
         <p class="success-message hidden">Заявка успешно отправлена!</p>
+      </div>
     </div>
   </section>
 

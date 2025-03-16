@@ -6,32 +6,17 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
+//sing_on_btn
+const sing_on = document.getElementsByClassName('.sing_in_btn');
 
-document.getElementById('consultationForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const formData = {
-    name: document.getElementById('name').value,
-    surname: document.getElementById('surname').value,
-    phone: document.getElementById('phone').value,
-    comment: document.getElementById('comment').value
-  };
+if (sing_on){
+  sing_on.addEventListener('click',() => {
+    // Проверяем текущее состояние кнопки
+    if (startButton.classList.contains('start') || (!startButton.classList.contains('started') && !startButton.classList.contains('stop') && !startButton.classList.contains('stopping'))) {
 
-  try {
-    const response = await fetch('/submit', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
 
-    if (response.ok) {
-      document.querySelector('.success-message').classList.remove('hidden');
-      document.getElementById('consultationForm').reset();
-      setTimeout(() => {
-        document.querySelector('.success-message').classList.add('hidden');
-      }, 3000);
+      startButton.classList.add('started'); // Добавляем класс started
+      window.pywebview.api.start_button(1);
     }
-  } catch (error) {
-    console.error('Ошибка отправки:', error);
-  }
-});
+  });
+};
