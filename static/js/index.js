@@ -6,17 +6,49 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-//sing_on_btn
-const sing_on = document.getElementsByClassName('.sing_in_btn');
 
-if (sing_on){
-  sing_on.addEventListener('click',() => {
-    // Проверяем текущее состояние кнопки
-    if (startButton.classList.contains('start') || (!startButton.classList.contains('started') && !startButton.classList.contains('stop') && !startButton.classList.contains('stopping'))) {
+// Получаем элементы
+const openFormButton = document.querySelector('.open-form-btn');
+const formSection = document.querySelector('.form-section');
+const formContainer = document.querySelector('.form-container');
+const alphaBackground = document.querySelector('.alpha-background');
+const middleFormBtn = document.querySelector('.btn_form')
+// Функция для открытия формы
+function openForm() {
+  formSection.classList.remove('hidden'); // Показываем форму
+  formContainer.classList.remove('hidden'); // Показываем форму
+  alphaBackground.classList.remove('hidden'); // Показываем форму
+  formSection.classList.add('show'); // Показываем форму
+  formContainer.classList.add('show'); // Показываем форму
+  alphaBackground.classList.add('show'); // Показываем форму
+}
 
+// Функция для закрытия формы
+function closeForm() {
+  formSection.classList.remove('show'); // Показываем форму
+  formContainer.classList.remove('show'); // Показываем форму
+  alphaBackground.classList.remove('show'); // Показываем форму
+  formSection.classList.add('hidden'); // Скрываем форму
+  formContainer.classList.add('hidden'); // Скрываем форму
+  alphaBackground.classList.add('hidden');
+}
 
-      startButton.classList.add('started'); // Добавляем класс started
-      window.pywebview.api.start_button(1);
+// Открываем форму по клику на кнопку
+if (openFormButton) {
+    openFormButton.addEventListener('click', openForm);
+}
+
+if (middleFormBtn) {
+  middleFormBtn.addEventListener('click', openForm);
+}
+// Закрываем форму по клику на полупрозрачный фон
+if (alphaBackground) {
+    alphaBackground.addEventListener('click', closeForm);
+}
+
+// Закрываем форму при нажатии клавиши Escape
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        closeForm();
     }
-  });
-};
+});

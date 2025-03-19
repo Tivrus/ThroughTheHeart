@@ -9,8 +9,8 @@
 body {
     font-family: Arial, sans-serif; /* Основной шрифт для всего сайта */
     line-height: 1.6; /* Высота строки для лучшей читаемости */
-    background-color: #1e1f20; /*Цвет фона страницы (легкий серый) */
-    /* background-color: #f4f4f4; Цвет фона страницы (легкий серый) */
+    /*background-color: #1e1f20; Цвет фона страницы (легкий серый) */
+     background-color: #f4f4f4;/* Цвет фона страницы (легкий серый) */
     color: #333; /* Основной цвет текста (темно-серый) */
     height: 3000px;
 }
@@ -23,8 +23,8 @@ body {
 }
 
 .header {
-    /*background: #ffffff;  Фон заголовка — белый */
-    background: #3c3f49;  /*Фон заголовка — белый */
+    background: #ffffff;  /*Фон заголовка — белый */
+    /*background: #3c3f49;  Фон заголовка — белый */
     color: #9e5cb0; /* Цвет текста в заголовке (фиолетовый оттенок) */
     padding: 1rem 0; /* Внутренний отступ сверху и снизу */
     position: relative; /* Относительное позиционирование для дочерних элементов */
@@ -79,17 +79,19 @@ body {
 
 }
 
-.nav-links a:hover, .sing_on_btn:hover{
+.nav-links a:hover, .open-form-btn:hover{
     text-decoration: underline; /* Подчеркиваем ссылку при наведении */
+    border: none; /* Убираем границу */
 }
 
 
-.sing_on_btn{
+.open-form-btn{
     border: none; /* Убираем границу */
     background-color: transparent; /* Убираем фон у иконок */
     color: #9e5cb0; /* Цвет ссылок в меню (фиолетовый оттенок) */
     text-decoration: none; /* Убираем подчеркивание ссылок */
     font-size: 1rem; /* Размер шрифта для ссылок */
+    cursor: pointer;
 }
 
 .right-section {
@@ -101,22 +103,23 @@ body {
     display: inline-flex; /* Иконки соцсетей */
     justify-content: center; /* Выравниваем содержимое по центру по горизонтали */
     align-items: center; /* Выравниваем содержимое по центру по вертикали */
-    width: 2.5em; /* Ширина иконки */
-    height: 2.5em; /* Высота иконки */    
+    width: 2.65em; /* Ширина иконки */
+    height: 2.65em; /* Высота иконки */    
     margin-right: 10px; /* Отступ между иконками */
-    overflow: hidden; /* Обрезаем изображение, если оно выходит за границы */
     background-color: transparent; /* Убираем фон у иконок */
 }
 
-.icon img {
+.icon svg{
     width: 80%; /* Изображение заполняет всю ширину иконки */
     object-fit: cover; /* Сохраняем пропорции изображения */
     filter: none; /* Убираем фильтры (например, цветовые эффекты) */
-    transition: box-shadow 0.3s ease;
+    fill:#8a4da7;
+    transition: width 0.3s ease, fill 0.3s ease;
 }
 
-.icon img:hover{
-    box-shadow: 0px 0px 8px 0px rgb(255, 69, 199);
+.icon svg:hover{
+    fill:#d086e5;
+    width: 2.6em; /* Ширина иконки */
 }
 
 
@@ -164,12 +167,17 @@ body {
     border-radius: 20px; /* Закругляем углы кнопки */
     cursor: pointer; /* Добавляем указатель мыши в виде руки */
     font-size: 1rem; /* Размер шрифта текста на кнопке */
-    transition: background 0.3s ease, transform 0.3s ease; /* Анимация фона и масштабирования */
+    transition: background-color 0.3s ease,box-shadow 0.3s ease, transform 0.3s ease; /* Анимация фона и масштабирования */
 }
 
+.btn_form:hover{
+    box-shadow: 0 0 10px 0 #851ca2;
+    transform: scale(1.05);
+    background-color:#b26fc5;
+}
 .btn:hover {
     background: #8a4da7; /* Темный фиолетовый фон при наведении */
-    transform: scale(1.05); /* Небольшое увеличение кнопки при наведении */
+    transform: scale(1.1); /* Небольшое увеличение кнопки при наведении */
 }
 
 .services {
@@ -262,37 +270,115 @@ body {
 }
 
 
-
-
-/*form-section*/
+/* Секция с формой */
 .form-section{
-    z-index: 4;
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+    pointer-events: none; /* Отключаем взаимодействие с элементами */
 }
 
 
-
-/* Форма */
-.form-section {
-    text-align: center;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* Центрируем элемент относительно его собственных размеров */
+/* Ключевые кадры для появления */
+@keyframes form_slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Ключевые кадры для исчезновения */
+@keyframes form_slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+
+/* Ключевые кадры для появления */
+@keyframes background_opacity_In {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ключевые кадры для исчезновения */
+@keyframes background_opacity_Out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Полупрозрачный фон */
 .alpha-background{
-    background-color: #1f1f22;
-    padding:300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 31, 34, 0.7); /* Начинается с прозрачного фона */
+    transition: background-color 0.4s ease; /* Плавное изменение фона */
+    opacity: 0;
 }
 
+/* Полупрозрачный фон */
+.alpha-background.hidden{
+    animation: background_opacity_Out 0.4s ease forwards; /* Анимация при исчезновении */
+}
+/* Анимация появления */
+.alpha-background.show{
+    animation: background_opacity_In 0.8s ease forwards; /* Анимация при появлении */
+}
+/* Полупрозрачный фон */
+.form-container.hidden{
+    animation: form_slideOut 0.4s ease forwards; /* Анимация при исчезновении */
+}
+/* Анимация появления */
+.form-container.show {
+    animation: form_slideIn 0.8s ease forwards; /* Анимация при появлении */
+}
+.form-section.hidden{
+    pointer-events: none; /* Отключаем взаимодействие с элементами */
+}
+.form-section.show{
+    pointer-events:all /* Отключаем взаимодействие с элементами */
+}
+
+/* Контейнер формы */
 .form-container {
+    position: relative;
     max-width: 500px;
-    margin: 0 auto;
+    width: 100%;
     padding: 30px;
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-50px); /* Начальное положение: смещено вверх */
+    transition: transform 0.4s ease; /* Плавное перемещение */
+    opacity: 0;
 }
+
 
 .form h2 {
     margin-bottom: 20px;
@@ -338,6 +424,7 @@ body {
 .submit-btn:hover {
     background: #6e407a;
 }
+
 
 .success-message {
     color: green;
