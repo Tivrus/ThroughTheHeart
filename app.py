@@ -12,9 +12,9 @@ server.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 server.config['MAIL_SERVER'] = 'smtp.gmail.com'
 server.config['MAIL_PORT'] = 465
 server.config['MAIL_USE_SSL'] = True
-server.config['MAIL_USERNAME'] = 'your_email@gmail.com'  # Замените на вашу почту
-server.config['MAIL_PASSWORD'] = 'your_password'  # Замените на ваш пароль или пароль приложения
-server.config['MAIL_DEFAULT_SENDER'] = 'your_email@gmail.com'  # Замените на вашу почту
+server.config['MAIL_USERNAME'] = 'glebegorov556@gmail.com'  # Почта, с которой отправляем
+server.config['MAIL_PASSWORD'] = '32322121mira'  # Пароль от почты
+server.config['MAIL_DEFAULT_SENDER'] = 'glebegorov556@gmail.com'  # Почта, с которой отправляем
 
 db = SQLAlchemy(server)
 mail = Mail(server)
