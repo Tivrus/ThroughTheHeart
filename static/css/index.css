@@ -107,6 +107,7 @@ body {
     height: 2.65em; /* Высота иконки */    
     margin-right: 10px; /* Отступ между иконками */
     background-color: transparent; /* Убираем фон у иконок */
+    margin-right: 10px; /* Отступ слева от блока телефона */
 }
 
 .icon svg{
@@ -116,6 +117,9 @@ body {
     fill:#8a4da7;
     transition: width 0.3s ease, fill 0.3s ease;
 }
+.icon.phone svg{
+    width: 75%; /* Изображение заполняет всю ширину иконки */
+}
 
 .icon svg:hover{
     fill:#d086e5;
@@ -123,15 +127,7 @@ body {
 }
 
 
-.phone {
-    display: flex; /* Блок с номером телефона */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-    margin-left: 10px; /* Отступ слева от блока телефона */
-}
 
-.phone img {
-    margin-right: 5px; /* Отступ между иконкой телефона и текстом номера */
-}
 
 .hero {
     text-align: center; /* Выравниваем текст по центру */

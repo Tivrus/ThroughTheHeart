@@ -1,12 +1,3 @@
-// Пример простого скрипта для переключения страниц
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.location.href = this.getAttribute('href');
-  });
-});
-
-
 // Получаем элементы
 const openFormButton = document.querySelector('.open-form-btn');
 const formSection = document.querySelector('.form-section');
