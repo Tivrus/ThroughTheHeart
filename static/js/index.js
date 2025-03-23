@@ -45,6 +45,40 @@ document.addEventListener('keydown', (event) => {
 });
 
 
+
+// Выбираем все карточки услуг
+const cards = document.querySelectorAll('.service-item');
+
+// Функция для открытия формы
+function openCardForm(priceElement) {
+  priceElement.classList.remove('opened'); // Убираем класс "opened"
+  priceElement.classList.add('closed');    // Добавляем класс "closed"
+}
+
+// Функция для закрытия формы
+function closeCardForm(priceElement) {
+  priceElement.classList.remove('closed'); // Убираем класс "closed"
+  priceElement.classList.add('opened');    // Добавляем класс "opened"
+}
+
+// Перебираем все карточки
+cards.forEach(card => {
+  const price = card.querySelector('.price'); // Находим элемент с ценой внутри текущей карточки
+
+  // Добавляем обработчик события mouseover (наведение мыши)
+  card.addEventListener('mouseover', () => {
+    openCardForm(price);
+  });
+
+  // Добавляем обработчик события mouseout (уход курсора)
+  card.addEventListener('mouseout', () => {
+    closeCardForm(price);
+  });
+});
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('consultationForm');
   const successMessage = document.querySelector('.success-message');

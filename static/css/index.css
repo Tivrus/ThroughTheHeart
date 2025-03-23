@@ -22,9 +22,9 @@ body {
 }
 
 .header {
-    background: #ffffff;  /*Фон заголовка — белый */
+    background: #9e5cb0;  /*Фон заголовка — белый */
     /*background: #3c3f49;  Фон заголовка — белый */
-    color: #9e5cb0; /* Цвет текста в заголовке (фиолетовый оттенок) */
+    color: #f4f4f4; /* Цвет текста в заголовке (фиолетовый оттенок) */
     padding: 1rem 0; /* Внутренний отступ сверху и снизу */
     position: relative; /* Относительное позиционирование для дочерних элементов */
 }
@@ -44,10 +44,13 @@ body {
     display: flex; /* Логотип и текст "Through the heart" */
     align-items: center; /* Выравниваем элементы по центру по вертикали */
     text-decoration: none; /* Убираем подчеркивание ссылки */
-    color: #9e5cb0; /* Цвет текста логотипа (фиолетовый оттенок) */
+    color: #f4f4f4; /* Цвет текста логотипа (фиолетовый оттенок) */
+    font-weight: 600;
 }
 
 .logo img {
+    border-radius: 100%;
+    box-shadow: 0px 0px 10px 0px#f4f4f4;
     height: 60px; /* Высота изображения логотипа */
     margin-right: 10px; /* Отступ между логотипом и текстом */
 }
@@ -72,7 +75,7 @@ body {
 }
 
 .nav-links a {
-    color: #9e5cb0; /* Цвет ссылок в меню (фиолетовый оттенок) */
+    color: #f4f4f4; /* Цвет ссылок в меню (фиолетовый оттенок) */
     text-decoration: none; /* Убираем подчеркивание ссылок */
     font-size: 1rem; /* Размер шрифта для ссылок */
 
@@ -87,7 +90,7 @@ body {
 .open-form-btn{
     border: none; /* Убираем границу */
     background-color: transparent; /* Убираем фон у иконок */
-    color: #9e5cb0; /* Цвет ссылок в меню (фиолетовый оттенок) */
+    color: #f4f4f4; /* Цвет ссылок в меню (фиолетовый оттенок) */
     text-decoration: none; /* Убираем подчеркивание ссылок */
     font-size: 1rem; /* Размер шрифта для ссылок */
     cursor: pointer;
@@ -113,7 +116,7 @@ body {
     width: 80%; /* Изображение заполняет всю ширину иконки */
     object-fit: cover; /* Сохраняем пропорции изображения */
     filter: none; /* Убираем фильтры (например, цветовые эффекты) */
-    fill:#8a4da7;
+    fill:#f4f4f4;
     transition: width 0.3s ease, fill 0.3s ease;
 }
 .icon.phone svg{
@@ -121,7 +124,7 @@ body {
 }
 
 .icon svg:hover{
-    fill:#d086e5;
+    fill:#f4f4f4;
     width: 2.6em; /* Ширина иконки */
 }
 
@@ -213,10 +216,32 @@ body {
     text-align: center; /* Выравниваем текст по центру */
 }
 
-.service-item p {
+
+.price{
     margin-bottom: 1rem; /* Отступ снизу от текста цены */
     text-align: center; /* Выравниваем текст по центру */
+    font-weight:normal;
+    transition: all 0.3s ease;
 }
+
+
+.price.opened{
+    margin-bottom: 1rem; /* Отступ снизу от текста цены */
+    text-align: center; /* Выравниваем текст по центру */
+    font-weight:normal;
+    transform: scale(1.8) translateY(10px);
+    font-weight: 600;
+}
+
+
+.price.closed{
+    margin-bottom: 1rem; /* Отступ снизу от текста цены */
+    text-align: center; /* Выравниваем текст по центру */
+    font-weight:normal;
+    transform: scale(1) translateY(0px);
+}
+
+
 
 /* Кнопка "Подробнее" */
 .service-item .btn-more {
