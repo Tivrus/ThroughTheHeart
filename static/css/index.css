@@ -1,468 +1,480 @@
-/* Общие стили */
+/* index.css */
+:root {
+    --primary-bg: #1A1A1D;
+    --darker-purple: #1a141b;
+    --dark-purple: #2d0236;
+    --normal-purple: #390345;
+    --light-purple: #70047a;
+    --accent-purple: #cd01df;
+    --text-light: #FFFFFF;
+    --gradient: linear-gradient(100deg, #65037a 0%, #cd01df 100%);
+    --glass-bg: rgba(26, 26, 29, 0.9);
+}
+
+/* Reset и базовые стили */
 * {
-    margin: 0; /* Убираем внешние отступы для всех элементов */
-    padding: 0; /* Убираем внутренние отступы для всех элементов */
-    box-sizing: border-box; /* Границы и отступы включаются в общую ширину элемента */
-    font-family: "Roboto", sans-serif;
+    list-style: none; /* Убираем маркеры */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif; /* Основной шрифт для всего сайта */
-    line-height: 1.6; /* Высота строки для лучшей читаемости */
-    /*background-color: #1e1f20; Цвет фона страницы (легкий серый) */
-     background-color: #f4f4f4;/* Цвет фона страницы (легкий серый) */
-    color: #333; /* Основной цвет текста (темно-серый) */
+    font-family: 'Poppins', sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
-
-.container {
-    width: 90%; /* Ширина контейнера занимает 90% родительского элемента */
-    max-width: 1200px; /* Максимальная ширина контейнера (для адаптивности) */
-    margin: 0 auto; /* Центрируем контейнер по горизонтали */
-}
-
-.header {
-    background: #9e5cb0;  /*Фон заголовка — белый */
-    /*background: #3c3f49;  Фон заголовка — белый */
-    color: #f4f4f4; /* Цвет текста в заголовке (фиолетовый оттенок) */
-    padding: 1rem 0; /* Внутренний отступ сверху и снизу */
-    position: relative; /* Относительное позиционирование для дочерних элементов */
-}
-
-.top-bar {
-    display: flex; /* Используем Flexbox для выравнивания элементов */
-    justify-content: space-between; /* Распределяем элементы между левым и правым краями */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-}
-
-.left-section {
-    display: flex; /* Левая часть верхней панели (логотип и навигация) */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-}
-
-.logo {
-    display: flex; /* Логотип и текст "Through the heart" */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-    text-decoration: none; /* Убираем подчеркивание ссылки */
-    color: #f4f4f4; /* Цвет текста логотипа (фиолетовый оттенок) */
-    font-weight: 600;
-}
-
-.logo img {
-    border-radius: 100%;
-    box-shadow: 0px 0px 10px 0px#f4f4f4;
-    height: 60px; /* Высота изображения логотипа */
-    margin-right: 10px; /* Отступ между логотипом и текстом */
-}
-
-.logo span {
-    font-size: 1.5rem; /* Размер шрифта для текста "Through the heart" */
-}
-
-.main-nav {
-    margin-left: 20px; /* Отступ между логотипом и навигацией */
-}
-
-.nav-links {
-    list-style: none; /* Убираем маркеры списка */
-    display: flex; /* Располагаем пункты меню горизонтально */
-
-}
-
-.nav-links li {
-    margin-left: 1rem; /* Отступ между пунктами меню */
-    
-}
-
-.nav-links a {
-    color: #f4f4f4; /* Цвет ссылок в меню (фиолетовый оттенок) */
-    text-decoration: none; /* Убираем подчеркивание ссылок */
-    font-size: 1rem; /* Размер шрифта для ссылок */
-
-}
-
-.nav-links a:hover, .open-form-btn:hover{
-    text-decoration: underline; /* Подчеркиваем ссылку при наведении */
-    border: none; /* Убираем границу */
-}
-
-
-.open-form-btn{
-    border: none; /* Убираем границу */
-    background-color: transparent; /* Убираем фон у иконок */
-    color: #f4f4f4; /* Цвет ссылок в меню (фиолетовый оттенок) */
-    text-decoration: none; /* Убираем подчеркивание ссылок */
-    font-size: 1rem; /* Размер шрифта для ссылок */
-    cursor: pointer;
-}
-
-.right-section {
-    display: flex; /* Правая часть верхней панели (иконки и телефон) */
-    align-items: center; /* Выравниваем элементы по центру по вертикали */
-}
-
-.icon {
-    display: inline-flex; /* Иконки соцсетей */
-    justify-content: center; /* Выравниваем содержимое по центру по горизонтали */
-    align-items: center; /* Выравниваем содержимое по центру по вертикали */
-    width: 2.65em; /* Ширина иконки */
-    height: 2.65em; /* Высота иконки */    
-    margin-right: 10px; /* Отступ между иконками */
-    background-color: transparent; /* Убираем фон у иконок */
-    margin-right: 10px; /* Отступ слева от блока телефона */
-}
-
-.icon svg{
-    width: 80%; /* Изображение заполняет всю ширину иконки */
-    object-fit: cover; /* Сохраняем пропорции изображения */
-    filter: none; /* Убираем фильтры (например, цветовые эффекты) */
-    fill:#f4f4f4;
-    transition: width 0.3s ease, fill 0.3s ease;
-}
-.icon.phone svg{
-    width: 75%; /* Изображение заполняет всю ширину иконки */
-}
-
-.icon svg:hover{
-    fill:#f4f4f4;
-    width: 2.6em; /* Ширина иконки */
-}
-
-
-
-
-.hero {
-    text-align: center; /* Выравниваем текст по центру */
-    padding: 5rem 0; /* Внутренний отступ сверху и снизу */
-}
-
-.hero h2 {
-    font-size: 2.5rem; /* Размер шрифта для заголовка */
-    margin-bottom: 1rem; /* Отступ снизу от заголовка */
-}
-
-.hero p {
-    font-size: 1.2rem; /* Размер шрифта для текста */
-    margin-bottom: 2rem; /* Отступ снизу от текста */
-}
-
-.btn {
-    background: #9e5cb0; /* Фон кнопки (фиолетовый оттенок) */
-    color: #fff; /* Цвет текста на кнопке (белый) */
-    padding: 0.8rem 1.5rem; /* Внутренние отступы кнопки */
-    border: none; /* Убираем границу */
-    border-radius: 20px; /* Закругляем углы кнопки */
-    cursor: pointer; /* Добавляем указатель мыши в виде руки */
-    font-size: 1rem; /* Размер шрифта текста на кнопке */
-    transition: background 0.3s ease, transform 0.3s ease; /* Анимация фона и масштабирования */
-}
-
-.btn_form {
-    background: #9e5cb0; /* Фон кнопки (фиолетовый оттенок) */
-    color: #fff; /* Цвет текста на кнопке (белый) */
-    padding: 0.8rem 1.5rem; /* Внутренние отступы кнопки */
-    border: none; /* Убираем границу */
-    border-radius: 20px; /* Закругляем углы кнопки */
-    cursor: pointer; /* Добавляем указатель мыши в виде руки */
-    font-size: 1rem; /* Размер шрифта текста на кнопке */
-    transition: background-color 0.3s ease,box-shadow 0.3s ease, transform 0.3s ease; /* Анимация фона и масштабирования */
-}
-
-.btn_form:hover{
-    box-shadow: 0 0 10px 0 #851ca2;
-    transform: scale(1.05);
-    background-color:#b26fc5;
-}
-.btn:hover {
-    background: #8a4da7; /* Темный фиолетовый фон при наведении */
-    transform: scale(1.1); /* Небольшое увеличение кнопки при наведении */
-}
-
-.services {
-    padding: 3rem 0; /* Внутренние отступы для секции услуг */
-}
-
-.service-list {
-    display: flex; /* Располагаем услуги горизонтально */
-    gap: 1.5rem; /* Расстояние между услугами */
-    justify-content: space-between; /* Равномерно распределяем услуги */
-}
-
-/* Стили для карточек услуг */
-.service-item {
-    background: #9e5cb0; /* Фон карточки услуги (фиолетовый оттенок) */
-    color: #fff; /* Цвет текста в карточке (белый) */
-    border-radius: 8px; /* Закругляем углы карточки */
-    overflow: hidden; /* Обрезаем содержимое, если оно выходит за границы */
-    transition: transform 0.3s ease; /* Анимация увеличения карточки */
-    cursor: pointer; /* Добавляем указатель мыши в виде руки */
-    width: calc(33% - 2rem); /* Ширина карточки (33% минус отступы) */
-    position: relative; /* Для позиционирования элементов внутри карточки */
-}
-
-.service-item:hover {
-    transform: scale(1.05); /* Небольшое увеличение карточки при наведении */
-}
-
-.service-item img {
-    width: 100%; /* Изображение заполняет всю ширину карточки */
-    height: 200px; /* Высота изображения */
-    object-fit: cover; /* Сохраняем пропорции изображения */
-}
-
-.service-item h2 {
-    margin: 1rem 0; /* Отступы вокруг заголовка услуги */
-    font-size: 1.2rem; /* Размер шрифта заголовка */
-    text-align: center; /* Выравниваем текст по центру */
-}
-
-
-.price{
-    margin-bottom: 1rem; /* Отступ снизу от текста цены */
-    text-align: center; /* Выравниваем текст по центру */
-    font-weight:normal;
-    transition: all 0.3s ease;
-}
-
-
-.price.opened{
-    margin-bottom: 1rem; /* Отступ снизу от текста цены */
-    text-align: center; /* Выравниваем текст по центру */
-    font-weight:normal;
-    transform: scale(1.8) translateY(10px);
-    font-weight: 600;
-}
-
-
-.price.closed{
-    margin-bottom: 1rem; /* Отступ снизу от текста цены */
-    text-align: center; /* Выравниваем текст по центру */
-    font-weight:normal;
-    transform: scale(1) translateY(0px);
-}
-
-
-
-/* Кнопка "Подробнее" */
-.service-item .btn-more {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem;
-    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
-    color: #fff;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-item:hover .btn-more {
-    opacity: 1;
-}
-
-.service-item .btn-more a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-}
-
-/* Анимации */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Footer(низ 2025) */
-.footer {
-    background-color: #9e5cb0; /* Фон футера (фиолетовый оттенок) */
-    color: #ffffff; /* Цвет текста в футере (белый) */
-    text-align: center; /* Выравниваем текст по центру */
-}
-
-
-/* Секция с формой */
-.form-section{
+/* Preloader */
+.preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: var(--normal-purple);
+    z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 7;
-    pointer-events: none; /* Отключаем взаимодействие с элементами */
+    transition: opacity 0.5s ease;
+    opacity: 0.3;
 }
 
-
-/* Ключевые кадры для появления */
-@keyframes form_slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--text-light);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
 }
 
-/* Ключевые кадры для исчезновения */
-@keyframes form_slideOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    to {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-
-/* Ключевые кадры для появления */
-@keyframes background_opacity_In {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.fade-out {
+    opacity: 0;
 }
 
-/* Ключевые кадры для исчезновения */
-@keyframes background_opacity_Out {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-}
-
-/* Полупрозрачный фон */
-.alpha-background{
-    position: absolute;
+/* Header */
+.header {
+    position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(31, 31, 34, 0.7); /* Начинается с прозрачного фона */
-    transition: background-color 0.4s ease; /* Плавное изменение фона */
-    opacity: 0;
+    background: var(--dark-purple);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Полупрозрачный фон */
-.alpha-background.hidden{
-    animation: background_opacity_Out 0.4s ease forwards; /* Анимация при исчезновении */
-}
-/* Анимация появления */
-.alpha-background.show{
-    animation: background_opacity_In 0.8s ease forwards; /* Анимация при появлении */
-}
-/* Полупрозрачный фон */
-.form-container.hidden{
-    animation: form_slideOut 0.4s ease forwards; /* Анимация при исчезновении */
-}
-/* Анимация появления */
-.form-container.show {
-    animation: form_slideIn 0.8s ease forwards; /* Анимация при появлении */
-}
-.form-section.hidden{
-    pointer-events: none; /* Отключаем взаимодействие с элементами */
-}
-.form-section.show{
-    pointer-events:all /* Отключаем взаимодействие с элементами */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* Контейнер формы */
-.form-container {
-    position: relative;
-    max-width: 500px;
-    width: 100%;
-    padding: 30px;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transform: translateY(-50px); /* Начальное положение: смещено вверх */
-    transition: transform 0.4s ease; /* Плавное перемещение */
-    opacity: 0;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: text-shadow 0.2s ease;
 }
 
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--normal-purple);
+    box-shadow: 0px 0px 10px 0px var(--accent-purple);    
+}
 
-.form h2 {
-    margin-bottom: 20px;
+.logo span {
+    font-weight: 700;
     font-size: 1.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
 }
 
-.input-group {
-    margin-bottom: 15px;
+.logo:hover{
+    text-shadow: 0px 0px 4px var(--accent-purple);
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.input-group textarea {
-    resize: none;
-    height: 100px;
-}
-
-.submit-btn {
-    width: 100%;
-    padding: 10px;
-    background: #9e5cb0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
     cursor: pointer;
-    transition: background 0.3s ease;
+    align-items: center;
 }
 
-.submit-btn:hover {
-    background: #6e407a;
+.nav-link {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
 }
 
-
-.success-message {
-    color: green;
-    font-weight: bold;
-    margin-top: 10px;
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-purple);
+    transition: width 0.3s ease;
 }
 
-.hidden {
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Мобильное меню */
+.menu-toggle {
     display: none;
+    cursor: pointer;
+    z-index: 1001;
 }
 
-/* Анимации */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
+.bar {
+    width: 25px;
+    height: 3px;
+    background: var(--text-light);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-top: 20vh;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 2rem;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Services Section */
+.services {
+    padding: 5rem 2rem;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--accent-purple);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: var(--glass-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-front {
+    padding: 2rem;
+    text-align: center;
+}
+
+.service-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: var(--accent-purple);
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+/* Форма */
+.modal {
+    /* Стили формы остаются без изменений */
+}
+
+/* Footer */
+.footer {
+    background: var(--darker-purple);
+    padding: 3rem 2rem;
+    margin-top: 5rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent-purple);
+}
+
+.contact-list {
+    list-style: none;
+}
+
+.contact-list li {
+    margin-bottom: 0.8rem;
+}
+
+.contact-list a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: var(--accent-purple);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--primary-bg);
+        flex-direction: column;
+        
+        padding: 2rem;
+        transition: right 0.3s ease;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .logo span {
+        font-size: 1.2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    } 
+}
+
+/* Основной контейнер */
+.service-details {
+    margin-top: 10vh;
+    list-style: none; /* Убираем маркеры */
+    display: flex; /* Активируем Flexbox */
+    justify-content: center; /* Выравниваем блок по горизонтали */
+    align-items: center; /* Выравниваем блок по вертикали */
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: var(--normal-purple);
+    transform: rotateZ(-4deg); /* Поворот */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Добавляем тень */
+}
+
+/* Стили для списка */
+.service-details ul {
+    padding: 0; /* Убираем стандартные отступы */
+    margin: 0; /* Убираем стандартные отступы */
+    text-align: left; /* Выравниваем текст внутри элементов по левому краю */
+    max-width: 500px; /* Ограничиваем ширину списка */
+}
+
+/* Стили для элементов списка */
+.service-details li {
+    position: relative; /* Для позиционирования градиента */
+    padding: 0 3vh;
+    margin-bottom: 10px; /* Отступ между элементами */
+}
+
+/* Градиентный текст */
+.service-details::before {
+    content: ''; /* Создаем псевдоэлемент */
+    position: absolute;
+    top: 0; /* Начинаем с верхнего края */
+    left: -100%; /* Начинаем за пределами текста */
+    width: 300%; /* Ширина градиента больше текста */
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        var(--light-purple) 0%,
+        var(--dark-purple) 33.33%,
+        var(--light-purple) 66.66%,
+        var(--dark-purple) 100%
+    ); /* Замыкающий градиент */
+    animation: gradientAnimation 12s linear infinite; /* Анимация */
+}
+
+/* Анимация градиента */
+@keyframes gradientAnimation {
+    0% {
+        left: -200%; /* Начинаем за пределами текста */
+    }
+    100% {
+        left: 0%; /* Заканчиваем в начале текста */
+    }
+}
+/* Кнопки */
+.cta-btn {
+    background: var(--gradient);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s;
+}
+.cta-btn.pulse {
+    animation: pulse 4s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+} 
+.cta-btn:hover::after {
+    left: 150%;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        right: -100%;
+        background: var(--primary-color);
+        width: 100%;
+        height: calc(100vh - 80px);
+        flex-direction: column;
+        transition: all 0.5s ease;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+}
+
