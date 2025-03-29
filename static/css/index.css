@@ -1,7 +1,7 @@
 /* index.css */
 :root {
     --primary-bg: #1A1A1D;
-    --darker-purple: #1a141b;
+    --darker-purple: #221a23;
     --dark-purple: #2d0236;
     --normal-purple: #390345;
     --light-purple: #70047a;
@@ -23,10 +23,30 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: var(--primary-bg);
+    position: relative;
+    background: url('../images/bg.jpg') no-repeat center center;
+    background-size: cover;
     color: var(--text-light);
     line-height: 1.6;
+    height: 100%;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 19, 0.6); /* 50% затемнение */
+    z-index: 1; /* Размещаем поверх фона */
+}
+
+/* Чтобы контент был виден поверх затемнения */
+body > * {
+    position: relative;
+    z-index: 2;
 }
 
 /* Preloader */
@@ -290,10 +310,187 @@ body {
     align-items: center; /* Выравниваем по вертикали */
     justify-content: center; /* Выравниваем по горизонтали */
 }
+
+
 /* Форма */
+.form-section{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 7;
+    pointer-events: none; /* Отключаем взаимодействие с элементами */
+}
 
 
+/* Ключевые кадры для появления */
+@keyframes form_slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+/* Ключевые кадры для исчезновения */
+@keyframes form_slideOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+
+/* Ключевые кадры для появления */
+@keyframes background_opacity_In {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Ключевые кадры для исчезновения */
+@keyframes background_opacity_Out {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Полупрозрачный фон */
+.alpha-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 31, 34, 0.7); /* Начинается с прозрачного фона */
+    transition: background-color 0.4s ease; /* Плавное изменение фона */
+    opacity: 0;
+}
+
+/* Полупрозрачный фон */
+.alpha-background.hidden{
+    animation: background_opacity_Out 0.4s ease forwards; /* Анимация при исчезновении */
+}
+/* Анимация появления */
+.alpha-background.show{
+    animation: background_opacity_In 0.8s ease forwards; /* Анимация при появлении */
+}
+/* Полупрозрачный фон */
+.form-container.hidden{
+    animation: form_slideOut 0.4s ease forwards; /* Анимация при исчезновении */
+}
+/* Анимация появления */
+.form-container.show {
+    animation: form_slideIn 0.8s ease forwards; /* Анимация при появлении */
+}
+.form-section.hidden{
+    pointer-events: none; /* Отключаем взаимодействие с элементами */
+}
+.form-section.show{
+    pointer-events:all /* Отключаем взаимодействие с элементами */
+}
+
+/* Контейнер формы */
+.form-container {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    padding: 30px;
+    background: var(--darker-purple);
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transform: translateZ(-50px); /* Начальное положение: смещено вверх */
+    transition: transform 0.4s ease; /* Плавное перемещение */
+    opacity: 0;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+.form h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: var(--darker-purple);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: var(--light-purple);
+    color: var(--text-light);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #6e407a;
+}
+
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 
 /* Footer */
@@ -301,6 +498,9 @@ body {
     background: var(--darker-purple);
     padding: 3rem 2rem;
     margin-top: 5rem;
+    bottom: 0; /* Прикрепляем к нижней части экрана */
+    left: 0; /* Прикрепляем к левому краю */
+    width: 100%; /* Занимает всю ширину экрана */
 }
 
 .footer-content {

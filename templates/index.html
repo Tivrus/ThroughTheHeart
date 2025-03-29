@@ -38,7 +38,7 @@
                     <li><a href="./services" class="nav-link">Услуги</a></li>
                     <li><p id="contacts" class="nav-link">Контакты</p></li>
                 </ul>
-                <li><button class="cta-btn open-form-btn">Записаться</button></li>
+                <li><button class="cta-btn closed">Записаться</button></li>
 
                 <div class="social-links">
                     <a href="https://wa.me/79786680612" class="social-icon" target="_blank">
@@ -49,13 +49,40 @@
             </nav>
         </div>
     </header>
-
+    <!-- Форма -->
+    <section class="form-section hidden">
+      <div class="alpha-background hidden"></div> <!-- Полупрозрачный фон -->
+      <div class="form-container hidden">
+          <h2>Записаться на консультацию</h2>
+          <form id="consultationForm" class="form" action="/submit_form" method="POST">
+              <div class="input-group">
+                  <label for="name">Имя:</label>
+                  <input type="text" id="name" name="name" required placeholder="Введите имя">
+              </div>
+              <div class="input-group">
+                  <label for="surname">Фамилия:</label>
+                  <input type="text" id="surname" name="surname" required placeholder="Введите фамилию">
+              </div>
+              <div class="input-group">
+                  <label for="phone">Телефон:</label>
+                  <input type="tel" id="phone" name="phone" required placeholder="Введите телефон">
+              </div>
+              <div class="input-group">
+                  <label for="comment">Комментарий:</label>
+                  <textarea id="comment" name="comment" placeholder="Оставьте комментарий"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Отправить заявку</button>
+          </form>
+          <p class="success-message hidden">Заявка успешно отправлена!</p>
+      </div>
+    </section>
+    
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Профессиональный пирсинг</h1>
             <p class="hero-subtitle">Искусство самовыражения в каждом проколе</p>
-            <button class="cta-btn pulse">Записаться сейчас</button>
+            <button class="cta-btn pulse closed">Записаться сейчас</button>
         </div>
         <div class="hero-scroll"></div>
     </section>
@@ -109,12 +136,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Форма -->
-    <div class="modal">
-        <!-- Обновлённый дизайн формы -->
-    </div>
-
     <!-- Footer -->
     <footer class="footer" id="contacts-section">
         <div class="container">
