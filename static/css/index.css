@@ -6,7 +6,8 @@
     --normal-purple: #390345;
     --light-purple: #70047a;
     --accent-purple: #cd01df;
-    --text-light: #FFFFFF;
+    --text-light: #f4f4f4;
+    --text-gray: #747476;
     --gradient: linear-gradient(100deg, #65037a 0%, #cd01df 100%);
     --glass-bg: rgba(26, 26, 29, 0.9);
 }
@@ -242,26 +243,58 @@ body {
     width: 100%;
     height: 250px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     margin-bottom: 1.5rem;
 }
 
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
 
-.price {
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.2rem;
     color: var(--accent-purple);
     font-weight: 700;
     margin: 1rem 0;
 }
 
-/* Форма */
-.modal {
-    /* Стили формы остаются без изменений */
+
+.service-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.service-item a{
+    text-decoration: none;
+}
+
+.btn-more p{
+    text-decoration: none;
+    color: var(--text-gray);
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Выравниваем по вертикали */
+    justify-content: center; /* Выравниваем по горизонтали */
+    width: 100%; /* Занимает всю ширину родительского блока */
+    height: 100%; /* Занимает всю высоту родительского блока */
+}
+
+.btn-more {
+    background: #252525;
+    width: 100%; /* Изменяем на 100% ширины контейнера */
+    height: auto; /* Автоматическая высота */
+    padding: 1rem 0; /* Добавляем внутренние отступы сверху и снизу */
+    display: flex; /* Используем Flexbox для центрирования */
+    align-items: center; /* Выравниваем по вертикали */
+    justify-content: center; /* Выравниваем по горизонтали */
+}
+/* Форма */
+
+
+
+
 
 /* Footer */
 .footer {
@@ -284,6 +317,61 @@ body {
     color: var(--accent-purple);
 }
 
+
+.footer-section span {
+    white-space: nowrap; /* Запрещаем перенос строки */
+    display: flex; /* Используем Flexbox для выравнивания */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.footer-section p {
+    display: inline; /* Делаем <p> строчным элементом */
+    margin: 0; /* Убираем стандартные отступы */
+    padding-left: 5px; /* Добавляем небольшой отступ слева для разделения текста */
+    transition: color 0.5s ease, text-shadow 0.5s ease, font-size 0.5s ease;
+    top:50%;
+    left:50%;
+}
+
+/* Эффект при наведении на <p> */
+.footer-section p:hover {
+    color:var(--accent-purple); /* Пример изменения цвета при наведении */
+    text-shadow: 0px 0px 5px var(--light-purple);
+    font-size: 1.201rem;
+}
+
+.social-links {
+    display: grid; /* Используем CSS Grid */
+    grid-template-columns: repeat(2, 1fr); /* Две колонки */
+    grid-gap: 20px; /* Расстояние между элементами */
+    justify-content: center; /* Центрируем содержимое */
+    align-items: center; /* Выравниваем по центру */
+    width: fit-content; /* Ширина подстраивается под содержимое */
+}
+
+.icon {
+    display: inline-flex; /* Иконки соцсетей */
+    justify-content: center; /* Выравниваем содержимое по центру по горизонтали */
+    align-items: center; /* Выравниваем содержимое по центру по вертикали */
+    width: 2.85em; /* Ширина иконки */
+    height: 2.85em; /* Высота иконки */
+    background-color: transparent; /* Убираем фон у иконок */
+}
+
+.icon svg {
+    width: 80%; /* Изображение заполняет всю ширину иконки */
+    fill: var(--text-light); /* Цвет иконки */
+    transition: transform 0.5s ease, fill 0.4s ease;
+}
+
+.icon:hover svg {
+    fill: var(--light-purple); /* Цвет при наведении */
+    transform: scale(1.5);
+}
+
+
+
+
 .contact-list {
     list-style: none;
 }
@@ -295,11 +383,13 @@ body {
 .contact-list a {
     color: var(--text-light);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease, text-shadow 0.5s ease, font-size 0.5s ease;
 }
 
 .contact-list a:hover {
     color: var(--accent-purple);
+    text-shadow: 0px 0px 5px var(--light-purple);
+    font-size: 1.1rem;
 }
 
 /* Адаптивность */
@@ -427,7 +517,7 @@ body {
     border: none;
     padding: 1rem 2.5rem;
     border-radius: 30px;
-    color: white;
+    color: var(--text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
