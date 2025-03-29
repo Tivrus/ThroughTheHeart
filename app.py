@@ -38,7 +38,7 @@ def main():
 
 @server.route("/services")
 def services():
-    return render_template("services.html", title="Cart", Ava="<img src='' alt=''>")
+    return render_template("services.html", title="Пирсинг Салон | Through the heart", Ava="../static/images/logo.png")
 
 
 @server.route("/submit_form", methods=["POST"])

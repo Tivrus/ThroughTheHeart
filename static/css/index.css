@@ -699,7 +699,7 @@ body > * {
         var(--light-purple) 66.66%,
         var(--dark-purple) 100%
     ); /* Замыкающий градиент */
-    animation: gradientAnimation 12s linear infinite; /* Анимация */
+    animation: gradientAnimation 9s linear infinite; /* Анимация */
 }
 
 /* Анимация градиента */
