@@ -41,6 +41,13 @@ def services():
     return render_template("services.html", title="Пирсинг Салон | Through the heart", Ava="../static/images/logo.png")
 
 
+
+@server.route("/bonuses")
+def bonuses():
+    return render_template("bonuses.html", title="Пирсинг Салон | Through the heart", Ava="../static/images/logo.png")
+
+
+
 @server.route("/submit_form", methods=["POST"])
 def submit_form():
     """
