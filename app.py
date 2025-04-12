@@ -78,7 +78,7 @@ def page_not_found(e):
     """
     Перенаправляет пользователя на страницу с ошибкой 404.
     """
-    return render_template("404_error.html", title="Страница не найдена"), 404
+    return render_template("502_error.html", title="Страница не найдена"), 404
 
 # Настройка Telegram-бота
 BOT_TOKEN = "7920844201:AAECMrQS3Iq8fpAg26qtnKJlFC5PGcMGnYw"
