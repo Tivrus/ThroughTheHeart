@@ -206,7 +206,9 @@ body > * {
     max-width: 1200px;
     margin: 0 auto;
 }
-
+.service-card.last{
+    display: none;
+}
 .service-card {
     background: var(--glass-bg);
     border-radius: 15px;
@@ -838,5 +840,31 @@ body > * {
     
     .form-container h2{
         font-size: 1.3rem;
+    }
+    .service-card.last{
+        display: grid; 
+    }
+    .services-grid {
+        margin: 0 auto;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .card-front {
+        padding: 0.5rem;
+    }
+    
+    .service-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 0.5rem;
+    }
+    .footer{
+        margin-top: 1rem;
+    }
+    .services {
+        padding: 2rem 2rem;
     }
 }
