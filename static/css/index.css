@@ -201,7 +201,8 @@ body > * {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr)); /* Три столбца по 250px */
+    justify-content: center; /* Центрирование сетки */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -839,15 +840,17 @@ body > * {
     }
     
     .form-container h2{
-        font-size: 1.3rem;
+        font-size: 1rem;
     }
     .service-card.last{
         display: grid; 
     }
     .services-grid {
         margin: 0 auto;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 0.8rem;
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Два столбца по 100px */
+        grid-template-rows: repeat(2, minmax(100px, 1fr));    /* Две строки по 100px */
+        justify-content: center; /* Центрирование сетки */
     }
 
     .card-front {
