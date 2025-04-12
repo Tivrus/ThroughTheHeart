@@ -49,40 +49,6 @@ body > * {
     z-index: 2;
 }
 
-/* Preloader */
-.preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--normal-purple);
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: opacity 0.5s ease;
-    opacity: 0.3;
-}
-
-.loader {
-    width: 48px;
-    height: 48px;
-    border: 3px solid var(--text-light);
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.fade-out {
-    opacity: 0;
-}
-
 /* Header */
 .header {
     position: fixed;
