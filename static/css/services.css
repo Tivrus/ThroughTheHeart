@@ -964,4 +964,24 @@ body > * {
     .services {
         padding: 2rem 2rem;
     }
+
+
+    .another-services-grid{
+        margin: 0 auto;
+        gap: 0.8rem;
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Два столбца по 100px */
+        grid-template-rows: repeat(2, minmax(100px, 1fr));    /* Две строки по 100px */
+        justify-content: center; /* Центрирование сетки */
+    }
+    .another-card-front {
+        padding: 0.5rem;
+    }
+    
+    .another-service-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 0.5rem;
+    }
 }
