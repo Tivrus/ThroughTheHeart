@@ -847,18 +847,30 @@ body > * {
     .navbar {
         flex-direction: column;
     }
-    /* Скрываем основное меню */
-    .desktop-menu {
-        display: none;
-    }
     .hero-content{
-        margin-top: 2rem;
+        margin-top: 5rem;
     }
-    /* Показываем мобильное меню */
-    .mobile-menu {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    .services-grid,
+    .another-services-grid {
+        grid-template-columns: 1fr;
+    }
+    .service-card h2 {
+        font-size: 0.9rem;
+    }
+    .cta-btn {
+        font-size: 0.9rem;
         display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition: all 0.5s;
     }
-
     .menu-toggle {
         display: none;
         position: absolute;
@@ -868,23 +880,62 @@ body > * {
     .header{
         position: absolute;
     }
-
-     /* Форма */
-     .form-container {
+    
+    /* Форма */
+    .form-container {
         width: 80%;
-        padding: 15px;
     }
     
-    .form h2 {
-        font-size: 0.1rem;
+    .form-container h2{
+        font-size: 1rem;
+    }
+    .service-card.last{
+        display: grid; 
+    }
+    .services-grid {
+        margin: 0 auto;
+        gap: 0.8rem;
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Два столбца по 100px */
+        grid-template-rows: repeat(2, minmax(100px, 1fr));    /* Две строки по 100px */
+        justify-content: center; /* Центрирование сетки */
     }
 
-    .input-group {
-        margin-bottom: 10px;
+    .card-front {
+        padding: 0.5rem;
+    }
+    
+    .service-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 0.5rem;
+    }
+    .footer{
+        margin-top: 1rem;
+    }
+    .services {
+        padding: 2rem 2rem;
     }
 
-    .success-message {
-        margin-top: 5px;
+
+    .another-services-grid{
+        margin: 0 auto;
+        gap: 0.8rem;
+        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Два столбца по 100px */
+        grid-template-rows: repeat(2, minmax(100px, 1fr));    /* Две строки по 100px */
+        justify-content: center; /* Центрирование сетки */
+    }
+    .another-card-front {
+        padding: 0.5rem;
+    }
+    
+    .another-service-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 0.5rem;
     }
 }
 
