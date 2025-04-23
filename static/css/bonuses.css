@@ -330,39 +330,6 @@ body > * {
 }
 
 
-/* Адаптивность */
-@media (max-width: 1600px) {
-    .services-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media (max-width: 1200px) {
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .services-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .service-card h2 {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .service-card {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-}
 /* Форма */
 .form-section{
     position: fixed;
@@ -642,67 +609,6 @@ body > * {
     font-size: 1.1rem;
 }
 
-/* Адаптивность */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        right: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--primary-bg);
-        flex-direction: column;
-        
-        padding: 2rem;
-        transition: right 0.3s ease;
-    }
-
-    .nav-menu.active {
-        right: 0;
-    }
-
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -6px);
-    }
-
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar {
-        padding: 0 1rem;
-    }
-
-    .logo span {
-        font-size: 1.2rem;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    } 
-}
 
 /* Основной контейнер */
 .service-details {
@@ -792,149 +698,14 @@ body > * {
     left: 150%;
 }
 
-/* Адаптация для ноутбуков (1024px - 1440px) */
-@media only screen and (max-width: 1440px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-    .services-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .another-services-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-     /* Форма */
-     .form-container {
-        width: 80%;
-        padding: 15px;
-    }
-    
-    .form h2 {
-        font-size: 0.1rem;
-    }
-
-    .input-group {
-        margin-bottom: 10px;
-    }
-
-    .success-message {
-        margin-top: 5px;
-    }
-}
-
-/* Адаптация для планшетов (768px - 1024px) */
-@media only screen and (max-width: 1024px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .hero-content{
-        margin-top: 2rem;
-    }
-    .nav-menu {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        cursor: pointer;
-        align-items: center;
-    }
-    .hero-title {
-        font-size: 3rem;
-    }
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .another-services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .service-card h2 {
-        font-size: 1.2rem;
-    }
-    .menu-toggle {
-        display: none;
-        position: absolute;
-    }
-    .service-details {
-    display: none;}
-    .header{
-        position: absolute;
-    }   
-
-     /* Форма */
-     .form-container {
-        width: 80%;
-        padding: 15px;
-    }
-    
-    .form h2 {
-        font-size: 5px;
-    }
-
-    .input-group {
-        margin-bottom: 10px;
-    }
-
-    .success-message {
-        margin-top: 5px;
-    }
-}
-
-/* Адаптация для мобильных устройств (320px - 768px) */
-/* Адаптация для мобильных устройств */
-@media only screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-    /* Скрываем основное меню */
-    .desktop-menu {
-        display: none;
-    }
-    .hero-content{
-        margin-top: 2rem;
-    }
-    /* Показываем мобильное меню */
-    .mobile-menu {
-        display: flex;
-    }
-
-    .menu-toggle {
-        display: none;
-        position: absolute;
-    }
-    .service-details {
-        display: none;}
-    .header{
-        position: absolute;
-    }
-
-     /* Форма */
-     .form-container {
-        width: 80%;
-        padding: 15px;
-    }
-    
-    .form h2 {
-        font-size: 0.1rem;
-    }
-
-    .input-group {
-        margin-bottom: 10px;
-    }
-
-    .success-message {
-        margin-top: 5px;
-    }
-}
 
 
-/* Адаптация для маленьких телефонов (до 480px) */
-@media only screen and (max-width: 480px) {
+/* Адаптация для телефонов (до 480px) */
+@media(max-width: 480px) {
+    .bonuses{
+        padding: 12rem 2rem 0rem 2rem;
+        margin-top: 0rem;
+    }
     .navbar {
         flex-direction: column;
     }
@@ -970,6 +741,7 @@ body > * {
         display: none;}
     .header{
         position: absolute;
+        margin-bottom: 5rem;
     }
     
     /* Форма */
@@ -979,33 +751,5 @@ body > * {
     
     .form-container h2{
         font-size: 1rem;
-    }
-    .service-card.last{
-        display: grid; 
-    }
-    .services-grid {
-        margin: 0 auto;
-        gap: 0.8rem;
-        grid-template-columns: repeat(2, minmax(100px, 1fr)); /* Два столбца по 100px */
-        grid-template-rows: repeat(2, minmax(100px, 1fr));    /* Две строки по 100px */
-        justify-content: center; /* Центрирование сетки */
-    }
-
-    .card-front {
-        padding: 0.5rem;
-    }
-    
-    .service-card img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 10px 10px 0 0;
-        margin-bottom: 0.5rem;
-    }
-    .footer{
-        margin-top: 1rem;
-    }
-    .services {
-        padding: 2rem 2rem;
     }
 }
