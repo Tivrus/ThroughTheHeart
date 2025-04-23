@@ -100,3 +100,13 @@ document.addEventListener('keydown', (event) => {
         closeForm();
     }
 });
+
+
+// Находим изображение
+const image = document.querySelector('.service-item img');
+
+// Добавляем обработчик клика
+image.addEventListener('click', () => {
+  // Переключаем класс 'clear' для изображения
+  image.classList.toggle('clear');
+});

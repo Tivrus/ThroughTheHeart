@@ -365,6 +365,12 @@ body > * {
     height: 14.5rem;
     border-radius: 10px 10px 0px 0px;
     margin-bottom: 1rem;
+    filter: blur(5px); /* Размытие по умолчанию */
+    transition: filter 0.3s ease; /* Плавный переход */ 
+}
+
+.service-item img.clear {
+    filter: blur(0px); /* Убираем размытие */
 }
 
 .service-card h2 {
