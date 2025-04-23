@@ -56,7 +56,7 @@ body > * {
     width: 100%;
     background: var(--dark-purple);
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 5;
     padding: 1rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.1);
 }
@@ -135,7 +135,7 @@ body > * {
 .menu-toggle {
     display: none;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 6;
 }
 
 .bar {
