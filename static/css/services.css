@@ -368,8 +368,8 @@ body > * {
 }
 
 
-#nipple-piercing img{
-    filter: blur(5px); /* Размытие по умолчанию */
+#nipple-piercing img, #double-nipple-piercing img{
+    filter: blur(3px); /* Размытие по умолчанию */
     transition: filter 0.3s ease; /* Плавный переход */ 
 }
 
