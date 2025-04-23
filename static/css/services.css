@@ -771,7 +771,7 @@ body > * {
 }
 
 /* Адаптация для телефонов */
-@media (hover:none) {
+@media (hover:not) {
     .logo:active{
         text-shadow: 0px 0px 4px var(--accent-purple);
     }
