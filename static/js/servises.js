@@ -101,12 +101,14 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-
-// Находим изображение
-const image = document.querySelector('.service-item img');
+// Находим карточку по её уникальному ID
+const card = document.getElementById('nipple-piercing');
 
 // Добавляем обработчик клика
-image.addEventListener('click', () => {
+card.addEventListener('click', () => {
+  // Находим изображение внутри этой карточки
+  const image = card.querySelector('.service-item img');
+  
   // Переключаем класс 'clear' для изображения
   image.classList.toggle('clear');
 });

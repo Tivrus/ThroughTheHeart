@@ -369,11 +369,11 @@ body > * {
 
 
 #nipple-piercing img, #double-nipple-piercing img{
-    filter: blur(3px); /* Размытие по умолчанию */
+    filter: blur(5px); /* Размытие по умолчанию */
     transition: filter 0.3s ease; /* Плавный переход */ 
 }
 
-.service-item img.clear {
+#nipple-piercing img.clean, #double-nipple-piercing img.clean{
     filter: blur(0px); /* Убираем размытие */
 }
 
