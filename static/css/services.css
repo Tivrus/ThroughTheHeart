@@ -390,7 +390,7 @@ body > * {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 7;
+    z-index: 1001;
     pointer-events: none; /* Отключаем взаимодействие с элементами */
 }
 
