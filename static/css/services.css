@@ -96,9 +96,6 @@ body > * {
     
 }
 
-.logo:hover{
-    text-shadow: 0px 0px 4px var(--accent-purple);
-}
 
 .nav-menu {
     display: flex;
@@ -127,9 +124,6 @@ body > * {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
 
 /* Мобильное меню */
 .menu-toggle {
@@ -221,9 +215,7 @@ body > * {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
+
 
 .service-item {
     display: flex;
@@ -282,9 +274,7 @@ body > * {
     font-weight: 500;
 }
 
-.btn-more:hover {
-    background: rgba(37, 37, 37, 1);
-}
+
 
 
 /* Another Srvices */
@@ -345,9 +335,6 @@ body > * {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
 
 .service-item {
     display: flex;
@@ -545,9 +532,6 @@ body > * {
     transition: background 0.3s ease;
 }
 
-.submit-btn:hover {
-    background: #6e407a;
-}
 
 
 .success-message {
@@ -612,12 +596,6 @@ body > * {
     left:50%;
 }
 
-/* Эффект при наведении на <p> */
-.footer-section p:hover {
-    color:var(--accent-purple); /* Пример изменения цвета при наведении */
-    text-shadow: 0px 0px 5px var(--light-purple);
-    font-size: 1.201rem;
-}
 
 .social-links {
     display: grid; /* Используем CSS Grid */
@@ -643,11 +621,6 @@ body > * {
     transition: transform 0.5s ease, fill 0.4s ease;
 }
 
-.icon:hover svg {
-    fill: var(--light-purple); /* Цвет при наведении */
-    transform: scale(1.5);
-}
-
 
 
 
@@ -663,12 +636,6 @@ body > * {
     color: var(--text-light);
     text-decoration: none;
     transition: color 0.5s ease, text-shadow 0.5s ease, font-size 0.5s ease;
-}
-
-.contact-list a:hover {
-    color: var(--accent-purple);
-    text-shadow: 0px 0px 5px var(--light-purple);
-    font-size: 1.1rem;
 }
 
 /* Основной контейнер */
@@ -755,42 +722,107 @@ body > * {
     transition: all 0.5s;
 }
 
-.cta-btn:hover::after {
-    left: 150%;
-}
+/* Адаптация для компов */
+@media(hover:hover) {
+    .logo:hover{
+        text-shadow: 0px 0px 4px var(--accent-purple);
+    }
 
+    .nav-link:hover::after {
+        width: 100%;
+    }
 
-/* Адаптация для ноутбуков (1024px - 1440px) */
-@media(max-width: 1440px) {
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .btn-more:hover {
+        background: rgba(37, 37, 37, 1);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
     
+    .submit-btn:hover {
+        background: #6e407a;
+    }
+
+    .footer-section p:hover {
+        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.201rem;
+    }
+    
+    .icon:hover svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
+        
+    .contact-list a:hover {
+        color: var(--accent-purple);
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.1rem;
+    }
+
+    .cta-btn:hover::after {
+        left: 150%;
+    }
 }
 
-/* Адаптация для планшетов (768px - 1024px) */
-@media (max-width: 1024px) {
+/* Адаптация для телефонов */
+@media (hover:none) {
+    .logo:active{
+        text-shadow: 0px 0px 4px var(--accent-purple);
+    }
+
+    .nav-link:active::after {
+        width: 100%;
+    }
+
+    .service-card:active {
+        transform: translateY(-10px);
+    }
+
+    .btn-more:active {
+        background: rgba(37, 37, 37, 1);
+    }
+
+    .service-card:active {
+        transform: translateY(-10px);
+    }
+    
+    .submit-btn:active {
+        background: #6e407a;
+    }
+
+    .footer-section p:active {
+        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.201rem;
+    }
+    
+    .icon:active svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
+        
+    .contact-list a:active {
+        color: var(--accent-purple);
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.1rem;
+    }
+
+    .cta-btn:active::after {
+        left: 150%;
+    }
 }
 
-/* Адаптация для мобильных устройств */
-@media(max-width: 768px) {
-
-}
 
 
-/* Адаптация для маленьких телефонов (до 480px) */
+/* Адаптация для телефонов (до 480px) */
 @media(max-width: 480px) {
-    .logo:hover,
-    .cta-btn:hover::after,
-    .contact-list a:hover,
-    .icon:hover svg,
-    .service-card:hover,
-    .nav-link:hover::after,
-    .btn-more:hover,
-    .service-card:hove,
-    .submit-btn:hover,
-    .footer-section p:hover,
-    .icon:hover svg,
-    .contact-list a:hover{fill: inherit;
-                          transform: none;
-                        animation: none;}
+    
     .navbar {
         flex-direction: column;
     }
