@@ -357,12 +357,14 @@ body > * {
 
 #nipple-piercing img, #double-nipple-piercing img{
     filter: blur(7px); /* Размытие по умолчанию */
-    transition: filter 0.3s ease; /* Плавный переход */ 
+    
     cursor:pointer;
+    transition: filter 0.3s ease; /* Плавный переход */
 }
 
 #nipple-piercing img.clean, #double-nipple-piercing img.clean{
     filter: blur(0px); /* Убираем размытие */
+    box-shadow: none;
     cursor:auto;
 }
 
@@ -732,17 +734,13 @@ body > * {
         width: 100%;
     }
 
-    .service-card:hover {
-        transform: translateY(-10px);
-    }
-
     .btn-more:hover {
         background: rgba(37, 37, 37, 1);
     }
 
     .service-card:hover {
         transform: translateY(-10px);
-    }
+    } 
     
     .submit-btn:hover {
         background: #6e407a;
@@ -780,16 +778,12 @@ body > * {
         width: 100%;
     }
 
-    .service-card:active {
-        transform: translateY(-10px);
-    }
-
     .btn-more:active {
         background: rgba(37, 37, 37, 1);
     }
 
     .service-card:active {
-        transform: translateY(-10px);
+        transform: translateY(0px);
     }
     
     .submit-btn:active {
@@ -797,13 +791,13 @@ body > * {
     }
 
     .footer-section p:active {
-        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        color:var(--accent-purple);
         text-shadow: 0px 0px 5px var(--light-purple);
         font-size: 1.201rem;
     }
     
     .icon:active svg {
-        fill: var(--light-purple); /* Цвет при наведении */
+        fill: var(--light-purple);
         transform: scale(1.5);
     }
         
@@ -816,7 +810,7 @@ body > * {
     .cta-btn:active::after {
         left: 150%;
     }
-}
+} 
 
 
 

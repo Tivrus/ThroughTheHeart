@@ -1,11 +1,3 @@
-// Анимация загрузки
-window.addEventListener('load', () => {
-  document.querySelector('.preloader').classList.add('fade-out');
-  setTimeout(() => {
-      document.querySelector('.preloader').style.display = 'none';
-  }, 1000);
-});
-
 // Адаптивное меню
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -26,17 +18,17 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-// Анимация карточек
-const serviceCards = document.querySelectorAll('.service-card');
-serviceCards.forEach(card => {
-  card.addEventListener('mouseenter', () => {
-      card.style.transform = 'translateY(-10px)';
-  });
+// // Анимация карточек
+// const serviceCards = document.querySelectorAll('.service-card');
+// serviceCards.forEach(card => {
+//   card.addEventListener('mouseenter', () => {
+//       card.style.transform = 'translateY(-10px)';
+//   });
   
-  card.addEventListener('mouseleave', () => {
-      card.style.transform = 'translateY(0)';
-  });
-});
+//   card.addEventListener('mouseleave', () => {
+//       card.style.transform = 'translateY(0)';
+//   });
+// });
 
 
 
