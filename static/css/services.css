@@ -7,7 +7,7 @@
     --light-purple: #70047a;
     --accent-purple: #cd01df;
     --text-light: #f4f4f4;
-    --text-gray: #747476;
+    --text-gray: #8c8c8f;
     --gradient: linear-gradient(100deg, #65037a 0%, #cd01df 100%);
     --glass-bg: rgba(26, 26, 29, 0.9);
 }
@@ -765,6 +765,22 @@ body > * {
 
 /* Адаптация для маленьких телефонов (до 480px) */
 @media(max-width: 480px) {
+    .logo:hover,
+    .cta-btn:hover::after,
+    .contact-list a:hover,
+    .icon:hover svg,
+    .service-card:hover,
+    .nav-link:hover::after,
+    .btn-more:hover,
+    .service-card:hove,
+    .submit-btn:hover,
+    .footer-section p:hover,
+    .icon:hover svg,
+    .contact-list a:hover{fill: inherit;
+                          transform: none;
+                        animation: none;}
+
+
     .navbar {
         flex-direction: column;
     }
@@ -839,7 +855,9 @@ body > * {
         padding: 2rem 2rem;
     }
 
-
+    .another-services{
+        background-image: linear-gradient(180deg,rgba(205, 1, 223, 0) 0%, rgba(205, 1, 223, 0.15) 15%, rgba(205, 1, 223, 0) 100%);;
+    }
     .another-services-grid{
         margin: 0 auto;
         gap: 0.8rem;
