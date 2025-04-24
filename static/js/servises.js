@@ -95,22 +95,58 @@ document.body.addEventListener('click', (event) => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const filterContainer = document.querySelector('.filter');
 
-  // Добавляем обработчик клика на контейнер
-  filterContainer.addEventListener('click', (event) => {
-    const button = event.target.closest('.filter-button');
-    if (button) {
-      toggleButtonState(button);
-      console.log(button.textContent.trim() + ':', button.dataset.state);
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Получаем все кнопки фильтра и карточки
+  const filterButtons = document.querySelectorAll('.filter-button');
+  const serviceCards = document.querySelectorAll('.service-card');
+
+  // Функция для обновления отображения карточек
+  function updateCards() {
+    // Получаем список активных категорий
+    const activeCategories = Array.from(filterButtons)
+      .filter(button => button.getAttribute('data-state') === 'on')
+      .map(button => button.getAttribute('data-category'));
+
+    console.log('Активные категории:', activeCategories); // Отладка
+
+    // Если нет активных категорий, показываем все карточки
+    if (activeCategories.length === 0) {
+      serviceCards.forEach(card => card.classList.remove('hidden'));
+      return;
     }
+
+    // Проходим по всем карточкам
+    serviceCards.forEach(card => {
+      // Проверяем наличие атрибута data-categories
+      const categoriesAttr = card.getAttribute('data-categories');
+      const cardCategories = categoriesAttr ? categoriesAttr.split(' ') : [];
+
+      console.log(`Карточка ${card.querySelector('h2').innerText}:`, cardCategories); // Отладка
+
+      // Проверяем, соответствует ли карточка хотя бы одной активной категории
+      const isVisible = activeCategories.some(category => cardCategories.includes(category));
+      card.classList.toggle('hidden', !isVisible);
+    });
+  }
+
+  // Добавляем обработчики событий для кнопок фильтра
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      // Переключаем состояние кнопки
+      const currentState = button.getAttribute('data-state');
+      const newState = currentState === 'on' ? 'off' : 'on';
+      button.setAttribute('data-state', newState);
+
+      console.log(`Кнопка ${button.querySelector('span').innerText}:`, newState); // Отладка
+
+      // Обновляем отображение карточек
+      updateCards();
+    });
   });
 
-  // Функция для переключения состояния кнопки
-  function toggleButtonState(button) {
-    const currentState = button.getAttribute('data-state');
-    const newState = currentState === 'on' ? 'off' : 'on';
-    button.setAttribute('data-state', newState);
-  }
+  // Инициализация: показываем все карточки
+  updateCards();
 });

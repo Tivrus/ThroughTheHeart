@@ -210,9 +210,9 @@ body > * {
     overflow: hidden;
     transition: transform 0.3s ease;
     position: relative;
-    display: flex;
     flex-direction: column;
     border: 1px solid rgba(255,255,255,0.1);
+    display: block; /* По умолчанию карточки видны */
 }
 
 
@@ -405,7 +405,10 @@ body > * {
 .filter-button[data-state="on"] {
     background-color: var(--light-purple); /* Цвет активной кнопки */
 }
-  
+
+.service-card.hidden {
+    display: none; /* Скрываем карточки с классом hidden */
+  }
 /* Форма */
 .form-section{
     position: fixed;
