@@ -96,9 +96,7 @@ body > * {
     
 }
 
-.logo:hover{
-    text-shadow: 0px 0px 4px var(--accent-purple);
-}
+
 
 .nav-menu {
     display: flex;
@@ -127,9 +125,6 @@ body > * {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
 
 /* Мобильное меню */
 .menu-toggle {
@@ -238,9 +233,6 @@ body > * {
     mask-composite: exclude;
 }
 
-.bonus-card:hover {
-    transform: translateY(-10px) rotateZ(-1deg);
-}
 
 .bonus-icon {
     width: 80px;
@@ -301,13 +293,6 @@ body > * {
     z-index: 1;
 }
 
-.social-badges a:hover svg {
-    fill: var(--light-purple); /* Цвет при наведении */
-    transform: scale(1.5);
-}
-
-
-
 
 
 
@@ -317,9 +302,6 @@ body > * {
     transition: transform 0.3s ease;
 }
 
-.social-badges img:hover {
-    transform: scale(1.2);
-}
 
 .terms {
     margin-top: 1.5rem;
@@ -483,9 +465,7 @@ body > * {
     transition: background 0.3s ease;
 }
 
-.submit-btn:hover {
-    background: #6e407a;
-}
+
 
 
 .success-message {
@@ -551,11 +531,7 @@ body > * {
 }
 
 /* Эффект при наведении на <p> */
-.footer-section p:hover {
-    color:var(--accent-purple); /* Пример изменения цвета при наведении */
-    text-shadow: 0px 0px 5px var(--light-purple);
-    font-size: 1.201rem;
-}
+
 
 .social-links {
     display: grid; /* Используем CSS Grid */
@@ -581,10 +557,7 @@ body > * {
     transition: transform 0.5s ease, fill 0.4s ease;
 }
 
-.icon:hover svg {
-    fill: var(--light-purple); /* Цвет при наведении */
-    transform: scale(1.5);
-}
+
 
 
 
@@ -603,11 +576,7 @@ body > * {
     transition: color 0.5s ease, text-shadow 0.5s ease, font-size 0.5s ease;
 }
 
-.contact-list a:hover {
-    color: var(--accent-purple);
-    text-shadow: 0px 0px 5px var(--light-purple);
-    font-size: 1.1rem;
-}
+
 
 
 /* Основной контейнер */
@@ -694,11 +663,104 @@ body > * {
     transition: all 0.5s;
 }
 
-.cta-btn:hover::after {
-    left: 150%;
+
+@media (hover:hover) {
+    .logo:hover{
+        text-shadow: 0px 0px 4px var(--accent-purple);
+    }
+    
+    .nav-link:hover::after {
+        width: 100%;
+    }
+        
+    .bonus-card:hover {
+        transform: translateY(-10px) rotateZ(-1deg);
+    }
+    
+    .social-badges a:hover svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
+
+    .social-badges img:hover {
+        transform: scale(1.2);
+    }
+
+    .submit-btn:hover {
+        background: #6e407a;
+    }
+
+    .footer-section p:hover {
+        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.201rem;
+    }
+
+    .icon:hover svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
+
+    .contact-list a:hover {
+        color: var(--accent-purple);
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.1rem;
+    }
+
+    .cta-btn:hover::after {
+        left: 150%;
+    }
+    
 }
 
+@media (hover:not) {
+    .logo:active{
+        text-shadow: 0px 0px 4px var(--accent-purple);
+    }
+    
+    .nav-link:active::after {
+        width: 100%;
+    }
+        
+    .bonus-card:active {
+        transform: translateY(-10px) rotateZ(-1deg);
+    }
+    
+    .social-badges a:active svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
 
+    .social-badges img:active {
+        transform: scale(1.2);
+    }
+
+    .submit-btn:active {
+        background: #6e407a;
+    }
+
+    .footer-section p:active {
+        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.201rem;
+    }
+
+    .icon:active svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
+
+    .contact-list a:active {
+        color: var(--accent-purple);
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.1rem;
+    }
+    
+    .cta-btn:active::after {
+        left: 150%;
+    }
+    
+}
 
 /* Адаптация для телефонов (до 480px) */
 @media(max-width: 480px) {
