@@ -949,4 +949,10 @@ body > * {
     .social-links {
         display: flex;
     }
+    .section-title{
+        display: none;
+    }
+    .filter{
+        display: none;
+    }
 }
