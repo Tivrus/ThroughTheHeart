@@ -97,7 +97,6 @@ document.body.addEventListener('click', (event) => {
 
 
 
-
 document.addEventListener('DOMContentLoaded', () => {
   // Получаем все кнопки фильтра и карточки
   const filterButtons = document.querySelectorAll('.filter-button');
@@ -112,12 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log('Активные категории:', activeCategories); // Отладка
 
-    // Если нет активных категорий, показываем все карточки
-    if (activeCategories.length === 0) {
-      serviceCards.forEach(card => card.classList.remove('hidden'));
-      return;
-    }
-
     // Проходим по всем карточкам
     serviceCards.forEach(card => {
       // Проверяем наличие атрибута data-categories
@@ -125,6 +118,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardCategories = categoriesAttr ? categoriesAttr.split(' ') : [];
 
       console.log(`Карточка ${card.querySelector('h2').innerText}:`, cardCategories); // Отладка
+
+      // Если карточка содержит категорию "not", она всегда видима
+      if (cardCategories.includes('not')) {
+        card.classList.remove('hidden');
+        return;
+      }
+
+      // Если нет активных категорий, показываем все карточки
+      if (activeCategories.length === 0) {
+        card.classList.remove('hidden');
+        return;
+      }
 
       // Проверяем, соответствует ли карточка хотя бы одной активной категории
       const isVisible = activeCategories.some(category => cardCategories.includes(category));
