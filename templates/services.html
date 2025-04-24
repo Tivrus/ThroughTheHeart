@@ -21,7 +21,7 @@
                 <span>Through the heart</span>
             </a>
             
-            <div class="menu-toggle" id="mobile-menu">
+            <div class="menu-filter" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -73,20 +73,63 @@
         </form>
         <p class="success-message hidden">Заявка успешно отправлена!</p>
     </div>
-  </section>
+</section>
+
 
 
 <!-- Services Section -->
 <section class="services">
     <div class="container">
+      <div class="filter">
+        <!-- Пирсинг 1 -->
+        <button class="filter-button" data-state="off" id="ear-piercing_btn">
+          <span>Пирсинг ушей</span>
+        </button>
+
+        <!-- Пирсинг 2 -->
+        <button class="filter-button" data-state="off" id="nose-piercing_btn">
+          <span>Пирсинг носа</span>
+        </button>
+
+        <!-- Пирсинг 3 -->
+        <button class="filter-button" data-state="off" id="eyebrow-piercing_btn">
+          <span>Пирсинг бровей</span>
+        </button>
+
+        <!-- Пирсинг 4 -->
+        <button class="filter-button" data-state="off" id="nipple-piercing_btn">
+          <span>Пирсинг груди</span>
+        </button>
+
+        <!-- Пирсинг 5 -->
+        <button class="filter-button" data-state="off" id="navel-piercing_btn">
+          <span>Пирсинг пупка</span>
+        </button>
+
+        <!-- Пирсинг 6 -->
+        <button class="filter-button" data-state="off" id="lip-piercing_btn">
+          <span>Пирсинг губ</span>
+        </button>
+
+        <!-- Пирсинг 7 -->
+        <button class="filter-button" data-state="off" id="tongue-piercing_btn">
+          <span>Пирсинг языка</span>
+        </button>
+
+        <!-- Пирсинг 8 -->
+        <button class="filter-button" data-state="off" id="microdermal_btn">
+          <span>Микродермал</span>
+        </button>
+      </div>
       <h2 class="section-title">Услуги</h2>
         <div class="services-grid">
             <!-- Карточка-->
             <div class="service-card" id="ear-piercing">
                 <div class="card-inner">
-                  <!-- Пирсинг хрящей -->
+                  <!-- Пирсинг ушей: Пирсинг хрящей -->
                   <div class="service-item">
                     <img src="../static/images/services/ear-piercing.jpg" alt="">
+                    <h4>Пирсинг ушей:</h4>
                     <h2>Пирсинг хрящей</h2>
                     <p class="price">1800 ₽</p>
                     
@@ -97,9 +140,10 @@
             <!-- Карточка-->
             <div class="service-card" id="double-ear-piercing">
               <div class="card-inner">
-                <!-- Двойной пирсинг хрящей -->
+                <!-- Пирсинг ушей: Двойной пирсинг хрящей -->
                 <div class="service-item">
                   <img src="../static/images/services/double-ear-piercing.jpg" alt="">
+                  <h4>Пирсинг ушей:</h4>
                   <h2>Двойной пирсинг хрящей</h2>
                   <p class="price">2500 ₽</p>
                   
@@ -110,9 +154,10 @@
           <!-- Карточка-->
           <div class="service-card" id="lobe-ear-piercing">
             <div class="card-inner">
-              <!-- Мочка -->
+              <!-- Пирсинг ушей: Мочка -->
               <div class="service-item">
                 <img src="../static/images/services/lobe-ear-piercing.png" alt="">
+                <h4>Пирсинг ушей:</h4>
                 <h2>Мочка</h2>
                 <p class="price">1500 ₽</p>
                 
@@ -123,9 +168,10 @@
           <!-- Карточка-->
           <div class="service-card" id="double-lobe-ear-piercing">
             <div class="card-inner">
-              <!-- Двойная мочка -->
+              <!-- Пирсинг ушей: Двойная мочка -->
               <div class="service-item">
                 <img src="../static/images/services/double-lobe-ear-piercing.png.jpg" alt="">
+                <h4>Пирсинг ушей:</h4>
                 <h2>Двойная мочка</h2>
                 <p class="price">2000 ₽</p>
                 
@@ -136,9 +182,10 @@
         <!-- Карточка-->
         <div class="service-card" id="triple-lobe-ear-piercing">
           <div class="card-inner">
-            <!-- Тройная мочка -->
+            <!-- Пирсинг ушей: Тройная мочка -->
             <div class="service-item">
               <img src="../static/images/services/triple-lobe-ear-piercing.png" alt="">
+              <h4>Пирсинг ушей:</h4>
               <h2>Тройная мочка</h2>
               <p class="price">2500 ₽</p>
               
@@ -152,6 +199,7 @@
             <!-- Пирсинг носа: Нострил -->
             <div class="service-item">
                 <img src="../static/images/services/nose-nostril-piercing.jpg" alt="">
+                <h4>Пирсинг носа:</h4>
                 <h2>Нострил</h2>
                 <p class="price">1500 ₽</p>
                 
@@ -165,6 +213,7 @@
               <!-- Пирсинг носа: Высокий нострил -->
               <div class="service-item">
                   <img src="../static/images/services/nose-high-nostril-piercing.jpg" alt="">
+                  <h4>Пирсинг носа:</h4>
                   <h2>Высокий нострил</h2>
                   <p class="price">1800 ₽</p>
                   
@@ -178,6 +227,7 @@
               <!-- Пирсинг носа: Септум -->
               <div class="service-item">
                   <img src="../static/images/services/nose-septum-piercing.jpg" alt="">
+                  <h4>Пирсинг носа:</h4>
                   <h2>Септум</h2>
                   <p class="price">2000 ₽</p>
                   
@@ -188,10 +238,11 @@
         <!-- Карточка-->
         <div class="service-card" id="eyebrow-piercing">
             <div class="card-inner">
-              <!-- Пирсинга бровей: Пирсинг брови -->
+              <!-- Пирсинга бровей: Бровь -->
               <div class="service-item">
                   <img src="../static/images/services/eyebrow-piercing.png  " alt="">
-                  <h2>Пирсинг брови</h2>
+                  <h4>Пирсинг бровей:</h4>
+                  <h2>Бровь</h2>
                   <p class="price">1800 ₽</p>
                   
               </div>
@@ -201,10 +252,11 @@
           <!-- Карточка-->
             <div class="service-card" id="eyebrow-symmetry-piercing">
                 <div class="card-inner">
-                  <!-- Пирсинга бровей: Симметрия пирсинга брови -->
+                  <!-- Пирсинг бровей: Симметрия пирсинга бровей -->
                   <div class="service-item">
                     <img src="../static/images/services/eyebrow-symmetry-piercing.jpg" alt="">
-                    <h2>Симметрия пирсинга брови</h2>
+                    <h4>Пирсинг бровей:</h4>
+                    <h2>Симметрия пирсинга бровей</h2>
                     <p class="price">2500 ₽</p>
                     
                   </div>
@@ -214,9 +266,10 @@
             <!-- Карточка-->
             <div class="service-card" id="double-eyebrow-piercing">
               <div class="card-inner">
-                <!-- Пирсинга бровей: Двойной пирсинг брови -->
+                <!-- Пирсинг бровей: Двойной пирсинг брови -->
                 <div class="service-item">
                   <img src="../static/images/services/double-eyebrow-piercing.jpg" alt="">
+                  <h4>Пирсинг бровей:</h4>
                   <h2>Двойной пирсинг брови</h2>
                   <p class="price">2500 ₽</p>
                   
@@ -227,9 +280,10 @@
           <!-- Карточка-->
           <div class="service-card" id="nipple-piercing">
             <div class="card-inner">
-              <!-- Грудь: Пирсинг соска -->
+              <!-- Пирсинг груди: Пирсинг соска -->
               <div class="service-item">
                 <img src="../static/images/services/nipple-piercing.jpg" alt="">
+                <h4>Пирсинг груди:</h4>
                 <h2>Пирсинг соска</h2>
                 <p class="price">2500 ₽</p>
                 
@@ -240,9 +294,10 @@
           <!-- Карточка-->
           <div class="service-card" id="double-nipple-piercing">
             <div class="card-inner">
-              <!-- Грудь: Пирсинг 2х сосков -->
+              <!-- Пирсинг груди: Пирсинг 2х сосков -->
               <div class="service-item">
                 <img src="../static/images/services/double-nipple-piercing.jpg" alt="">
+                <h4>Пирсинг груди:</h4>
                 <h2>Пирсинг 2х сосков</h2>
                 <p class="price">4000 ₽</p>
                 
@@ -256,6 +311,7 @@
             <!-- Пирсинг пупка: Классический -->
             <div class="service-item">
               <img src="../static/images/services/classic-navel-piercing.jpg" alt="">
+              <h4>Пирсинг пупка:</h4>
               <h2>Классический</h2>
               <p class="price">2000 ₽</p>
               
@@ -269,6 +325,7 @@
             <!-- Пирсинг пупка: Нижний -->
             <div class="service-item">
                 <img src="../static/images/services/lower-navel-piercing.jpg" alt="">
+                <h4>Пирсинг пупка:</h4>
                 <h2>Нижний пирсинг пупка</h2>
                 <p class="price">2000 ₽</p>
                 
@@ -282,6 +339,7 @@
               <!-- Пирсинг губ: Медуза -->
               <div class="service-item">
                   <img src="../static/images/services/jellyfish-lip-piercing.jpg" alt="">
+                  <h4>Пирсинг губ:</h4>
                   <h2>Медуза</h2>
                   <p class="price">2000 ₽</p>
                   
@@ -295,6 +353,7 @@
               <!-- Пирсинг губ: Лабрет -->
               <div class="service-item">
                   <img src="../static/images/services/labret-lip-piercing.jpg" alt="">
+                  <h4>Пирсинг губ:</h4>
                   <h2>Лабрет</h2>
                   <p class="price">1500 ₽</p>
                   
@@ -308,6 +367,7 @@
               <!-- Пирсинг губ: Двойной лабрет -->
               <div class="service-item">
                   <img src="../static/images/services/double-labret-lip-piercing.jpg" alt="">
+                  <h4>Пирсинг губ:</h4>
                   <h2>Двойной лабрет</h2>
                   <p class="price">2500 ₽</p>
                   
@@ -317,10 +377,11 @@
         <!-- Карточка-->
         <div class="service-card" id="tongue-piercing">
           <div class="card-inner">
-            <!-- Пирсинг языка -->
+            <!-- Пирсинг языка: Классический -->
             <div class="service-item">
               <img src="../static/images/services/tongue-piercing.jpg" alt="">
-              <h2>Пирсинг языка</h2>
+              <h4>Пирсинг языка:</h4>
+              <h2>Классический</h2>
               <p class="price">2000 ₽</p>
               
             </div>
@@ -330,9 +391,10 @@
         <!-- Карточка-->
         <div class="service-card" id="microdermal-installation">
           <div class="card-inner">
-            <!-- Установка микродермала -->
+            <!-- Микродермал: Установка микродермала -->
             <div class="service-item">
               <img src="../static/images/services/microdermal-installation.png" alt="">
+              <h4>Микродермал:</h4>
               <h2>Установка микродермала</h2>
               <p class="price">2500 ₽</p>
               

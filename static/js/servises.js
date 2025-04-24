@@ -18,19 +18,6 @@ document.addEventListener('mousemove', (e) => {
   });
 });
 
-// // Анимация карточек
-// const serviceCards = document.querySelectorAll('.service-card');
-// serviceCards.forEach(card => {
-//   card.addEventListener('mouseenter', () => {
-//       card.style.transform = 'translateY(-10px)';
-//   });
-  
-//   card.addEventListener('mouseleave', () => {
-//       card.style.transform = 'translateY(0)';
-//   });
-// });
-
-
 
 document.getElementById('contacts').addEventListener('click', function (event) {
 
@@ -102,5 +89,26 @@ document.body.addEventListener('click', (event) => {
   if (image) {
     // Переключаем класс 'clean' для изображения
     image.classList.toggle('clean');
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const filterContainer = document.querySelector('.filter');
+
+  // Добавляем обработчик клика на контейнер
+  filterContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('.filter-button');
+    if (button) {
+      toggleButtonState(button);
+      console.log(button.textContent.trim() + ':', button.dataset.state);
+    }
+  });
+
+  // Функция для переключения состояния кнопки
+  function toggleButtonState(button) {
+    const currentState = button.getAttribute('data-state');
+    const newState = currentState === 'on' ? 'off' : 'on';
+    button.setAttribute('data-state', newState);
   }
 });
