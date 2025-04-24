@@ -106,22 +106,22 @@ document.body.addEventListener('click', (event) => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  const filterContainer = document.querySelector('.filter');
+// document.addEventListener('DOMContentLoaded', () => {
+//   const filterContainer = document.querySelector('.filter');
 
-  // Добавляем обработчик клика на контейнер
-  filterContainer.addEventListener('click', (event) => {
-    const button = event.target.closest('.filter-button');
-    if (button) {
-      toggleButtonState(button);
-      console.log(button.textContent.trim() + ':', button.dataset.state);
-    }
-  });
+//   // Добавляем обработчик клика на контейнер
+//   filterContainer.addEventListener('click', (event) => {
+//     const button = event.target.closest('.filter-button');
+//     if (button) {
+//       toggleButtonState(button);
+//       console.log(button.textContent.trim() + ':', button.dataset.state);
+//     }
+//   });
 
-  // Функция для переключения состояния кнопки
-  function toggleButtonState(button) {
-    const currentState = button.getAttribute('data-state');
-    const newState = currentState === 'on' ? 'off' : 'on';
-    button.setAttribute('data-state', newState);
-  }
-});
+//   // Функция для переключения состояния кнопки
+//   function toggleButtonState(button) {
+//     const currentState = button.getAttribute('data-state');
+//     const newState = currentState === 'on' ? 'off' : 'on';
+//     button.setAttribute('data-state', newState);
+//   }
+// });
