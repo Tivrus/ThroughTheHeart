@@ -1,11 +1,3 @@
-// Анимация загрузки
-window.addEventListener('load', () => {
-  document.querySelector('.preloader').classList.add('fade-out');
-  setTimeout(() => {
-      document.querySelector('.preloader').style.display = 'none';
-  }, 1000);
-});
-
 // Адаптивное меню
 const menuToggle = document.querySelector('.menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -99,4 +91,33 @@ document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         closeForm();
     }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('consultationForm');
+  const successMessage = document.querySelector('.success-message');
+
+  form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      // Собираем данные формы
+      const formData = new FormData(form);
+
+      // Отправляем данные на сервер
+      const response = await fetch('/submit_form', {
+          method: 'POST',
+          body: formData,
+      });
+
+      const result = await response.json();
+
+      if (result.status === 'success') {
+          // Показываем сообщение об успехе
+          successMessage.classList.remove('hidden');
+          form.reset();
+      } else {
+          alert(result.message);
+      }
+  });
 });
