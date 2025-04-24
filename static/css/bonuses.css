@@ -814,4 +814,7 @@ body > * {
     .form-container h2{
         font-size: 1rem;
     }
+    .social-links {
+        display: flex;
+    }
 }

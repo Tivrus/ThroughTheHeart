@@ -864,7 +864,7 @@ body > * {
         font-size: 1rem;
     }
 
-    
+
     .service-card.last{
         display: grid; 
     }
@@ -917,5 +917,8 @@ body > * {
         object-fit: cover;
         border-radius: 10px 10px 0 0;
         margin-bottom: 0.5rem;
+    }
+    .social-links {
+        display: flex;
     }
 }

@@ -96,10 +96,6 @@ body > * {
     
 }
 
-.logo:hover{
-    text-shadow: 0px 0px 4px var(--accent-purple);
-}
-
 .nav-menu {
     display: flex;
     gap: 2rem;
@@ -127,9 +123,7 @@ body > * {
     transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
-    width: 100%;
-}
+
 
 /* Мобильное меню */
 .menu-toggle {
@@ -219,9 +213,6 @@ body > * {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-}
 
 .card-front {
     padding: 2rem;
@@ -431,9 +422,7 @@ body > * {
     transition: background 0.3s ease;
 }
 
-.submit-btn:hover {
-    background: #6e407a;
-}
+
 
 
 .success-message {
@@ -500,11 +489,7 @@ body > * {
 }
 
 /* Эффект при наведении на <p> */
-.footer-section p:hover {
-    color:var(--accent-purple); /* Пример изменения цвета при наведении */
-    text-shadow: 0px 0px 5px var(--light-purple);
-    font-size: 1.201rem;
-}
+
 
 .social-links {
     display: grid; /* Используем CSS Grid */
@@ -530,11 +515,6 @@ body > * {
     transition: transform 0.5s ease, fill 0.4s ease;
 }
 
-.icon:hover svg {
-    fill: var(--light-purple); /* Цвет при наведении */
-    transform: scale(1.5);
-}
-
 
 
 
@@ -552,11 +532,7 @@ body > * {
     transition: color 0.5s ease, text-shadow 0.5s ease, font-size 0.5s ease;
 }
 
-.contact-list a:hover {
-    color: var(--accent-purple);
-    text-shadow: 0px 0px 5px var(--light-purple);
-    font-size: 1.1rem;
-}
+
 
 /* Основной контейнер */
 .service-details {
@@ -650,153 +626,90 @@ body > * {
     50% { transform: scale(1.15); }
     100% { transform: scale(1); }
 } 
-.cta-btn:hover::after {
+
+
+
+@media (hover:hover) {
+    .logo:hover{
+        text-shadow: 0px 0px 4px var(--accent-purple);
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+    }
+        
+    .service-card:hover {
+        transform: translateY(-10px);
+    }
+
+    .submit-btn:hover {
+        background: #6e407a;
+    }
+
+    .footer-section p:hover {
+        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.201rem;
+    }
+    
+    .icon:hover svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
+    }
+
+    .contact-list a:hover {
+        color: var(--accent-purple);
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.1rem;
+    }
+
+    .cta-btn:hover::after {
     left: 150%;
-}
-
-/* Адаптация для ноутбуков (1024px - 1440px) */
-@media only screen and (max-width: 1440px) {
-    .hero-title {
-        font-size: 3.5rem;
-    }
-    .hero-subtitle {
-        font-size: 1.3rem;
-    }
-    .services-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .another-services-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-     /* Форма */
-     .form-container {
-        width: 80%;
-        padding: 15px;
-    }
-    
-    .form h2 {
-        font-size: 0.1rem;
-    }
-
-    .input-group {
-        margin-bottom: 10px;
-    }
-
-    .success-message {
-        margin-top: 5px;
-    }
-}
-
-/* Адаптация для планшетов (768px - 1024px) */
-@media only screen and (max-width: 1024px) {
-    .navbar {
-        flex-direction: column;
-    }
-    .hero-content{
-        margin-top: 2rem;
-    }
-    .nav-menu {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-        cursor: pointer;
-        align-items: center;
-    }
-    .hero-title {
-        font-size: 3rem;
-    }
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
-    .services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .another-services-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .service-card h2 {
-        font-size: 1.2rem;
-    }
-    .menu-toggle {
-        display: none;
-        position: absolute;
-    }
-    .service-details {
-    display: none;}
-    .header{
-        position: absolute;
     }   
-
-     /* Форма */
-     .form-container {
-        width: 80%;
-        padding: 15px;
-    }
-    
-    .form h2 {
-        font-size: 5px;
-    }
-
-    .input-group {
-        margin-bottom: 10px;
-    }
-
-    .success-message {
-        margin-top: 5px;
-    }
 }
 
-/* Адаптация для мобильных устройств (320px - 768px) */
-/* Адаптация для мобильных устройств */
-@media only screen and (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-    }
-    /* Скрываем основное меню */
-    .desktop-menu {
-        display: none;
-    }
-    .hero-content{
-        margin-top: 2rem;
-    }
-    /* Показываем мобильное меню */
-    .mobile-menu {
-        display: flex;
+@media (hover:not) {
+    .logo:active{
+        text-shadow: 0px 0px 4px var(--accent-purple);
     }
 
-    .menu-toggle {
-        display: none;
-        position: absolute;
+    .nav-link:active::after {
+        width: 100%;
     }
-    .service-details {
-        display: none;}
-    .header{
-        position: absolute;
+        
+    .service-card:active {
+        transform: translateY(-10px);
     }
 
-     /* Форма */
-     .form-container {
-        width: 80%;
-        padding: 15px;
+    .submit-btn:active {
+        background: #6e407a;
+    }
+
+    .footer-section p:active {
+        color:var(--accent-purple); /* Пример изменения цвета при наведении */
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.201rem;
     }
     
-    .form h2 {
-        font-size: 0.1rem;
+    .icon:active svg {
+        fill: var(--light-purple); /* Цвет при наведении */
+        transform: scale(1.5);
     }
 
-    .input-group {
-        margin-bottom: 10px;
+    .contact-list a:active {
+        color: var(--accent-purple);
+        text-shadow: 0px 0px 5px var(--light-purple);
+        font-size: 1.1rem;
     }
-
-    .success-message {
-        margin-top: 5px;
-    }
+    
+    .cta-btn:active::after {
+    left: 150%;
+    }   
 }
 
 
 /* Адаптация для маленьких телефонов (до 480px) */
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
     .navbar {
         flex-direction: column;
     }
@@ -869,5 +782,9 @@ body > * {
     }
     .services {
         padding: 2rem 2rem;
+    }
+    
+    .social-links {
+        display: flex;
     }
 }
